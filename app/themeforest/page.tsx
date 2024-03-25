@@ -72,7 +72,7 @@ return (
           </Link>
           ))
         ) : (
-          <p className='text-2xl md:text-3xl lg:text-3xl'>Ładowanie danych...</p>
+          <img className='w-20 h-20' src="/images/loading-gif-loading.gif" alt="loading-gif-loading" />
         )}
         </div>
       </div>

@@ -194,7 +194,7 @@ const ThemeForestDetail = () => {
             </div>
             <div className='w-6/6 md:w-2/6 lg:w-2/6'>
             {
-              item.attributes && item.attributes.length > 0 &&
+              item.attributes[3] && item.attributes[3].label.length > 0 &&
                 <div>
                   <h3 className='text-xs md:text-md lg:text-md mt-1 text-lime-950'>{item.attributes[3].label}:</h3>
                   {Array.isArray(item.attributes[3].value) ? (
@@ -209,7 +209,7 @@ const ThemeForestDetail = () => {
             </div>
           </div>
           <div>
-            <h2 className="mt-2 text-xl md:text-xl lg:text-xl md:mt-0 text-lime-900">Author: {item.author_username}</h2>
+            <h2 className="mt-2 text-md md:text-md lg:text-md md:mt-0 text-lime-900">Author: {item.author_username}</h2>
             <p className='text-xs md:text-md lg:text-lg mt-1 text-lime-900'>{item.author_url}</p>
           </div>
         </div>

@@ -1,12 +1,9 @@
-// pages/api/envatoApi.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
     case 'GET':
       return handleGetRequest(req, res);
-    // case 'POST':
-    //   return handlePostRequest(req, res);
     default:
       res.setHeader('Allow', ['GET', 'POST']);
       res.status(405).end(`Method ${req.method} Not Allowed`);
@@ -34,10 +31,8 @@ async function fetchData(apiUrl: string, res: NextApiResponse) {
     res.status(200).json(data);
     } catch (error) {
       if (error instanceof Error) {
-
         res.status(500).json({ error: error.message });
       } else {
-
         res.status(500).json({ error: "An unknown error occurred" });
       }
     }
