@@ -95,9 +95,6 @@ const ThemeForestDetail = () => {
       .catch(error => console.error("Failed to fetch item details:", error));
   }, [itemId]);
 
-  console.log(item);
-  console.log(itemId);
-
   return (
     <main className="container mx-auto p-4">
       <NavBar />
@@ -210,7 +207,7 @@ const ThemeForestDetail = () => {
           
           <div>
             <h2 className="mt-2 text-md md:text-md lg:text-md md:mt-0 text-lime-900">Author: {item.author_username}</h2>
-            <LinkText to={item.author_url} fontSize='text-sm md:text-sm lg:text-sm'>{item.author_url}</LinkText>
+            <LinkText to={item.author_url} fontSize='text-xs md:text-xs lg:text-sm'>{item.author_url}</LinkText>
           </div>
         </div>
       ) : (

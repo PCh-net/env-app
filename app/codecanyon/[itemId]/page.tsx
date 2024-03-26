@@ -96,9 +96,6 @@ const CodecanyonDetail = () => {
       .catch(error => console.error("Failed to fetch item details:", error));
   }, [itemId]);
 
-  console.log(item);
-  console.log(itemId);
-
   return (
     <main className="container mx-auto p-4">
       <NavBar />

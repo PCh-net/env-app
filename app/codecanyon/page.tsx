@@ -47,7 +47,6 @@ const PageCodeCanyon = () => {
 
     fetchData();
   }, []);
-console.log(items);
 
 return (
     <main className="container mx-auto p-4">
