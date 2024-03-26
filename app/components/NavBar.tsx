@@ -26,6 +26,7 @@ const NavBar = () => {
             <div className="hidden md:flex items-center space-x-1">
               <Link href="/" ><MiniButton fullWidth={true} >Home page</MiniButton></Link>
               <Link href="/themeforest" className='pl-2' ><MiniButton fullWidth={true} >Themeforest</MiniButton></Link>
+              <Link href="/codecanyon" className='pl-2' ><MiniButton fullWidth={true} >Codecanyon</MiniButton></Link>
             </div>
           </div>
           {/* mobile menu button */}

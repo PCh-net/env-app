@@ -25,7 +25,7 @@ const EnvatoGrid: React.FC = () => {
         if (!response.ok) throw new Error('Network response was not ok');
 
         const data: EnvatoApiResponse = await response.json();
-
+        console.log(data["random-new-files"]);
         setItems(data["random-new-files"]);
       } catch (error) {
         console.error("Could not fetch data:", error);
@@ -55,7 +55,7 @@ const EnvatoGrid: React.FC = () => {
       )}
 
       <Link href='/wordpress'>
-      <div className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
+      <div className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
         <div className="-mt-16 flex justify-center md:justify-end">
           <img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt='envato-logo-icon128x128' src='/images/logos/envato-logo-icon128x128.png' />
         </div>
@@ -64,8 +64,8 @@ const EnvatoGrid: React.FC = () => {
         <p className="text-sm md:text-lg lg:text-lg mt-2 text-lime-800">Finf Your theme</p>
       </div>
       </Link>
-
-      <div className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
+      <Link href='/codecanyon'>
+      <div className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
         <div className="-mt-16 flex justify-center md:justify-end">
           <img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt='envato-logo-icon128x128' src='/images/logos/envato-logo-icon128x128.png' />
         </div>
@@ -73,8 +73,9 @@ const EnvatoGrid: React.FC = () => {
         <Image src="/images/logos/EnvatoMarket-Codecanyon-Dark.png" alt="EnvatoMarket-Codecanyon-Dark" width={393} height={82} />
         <p className="text-sm md:text-lg lg:text-lg mt-2 text-lime-800">Finf Your theme</p>
       </div>
+      </Link>
 
-      <div className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
+      <div className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
         <div className="-mt-16 flex justify-center md:justify-end">
           <img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt='envato-logo-icon128x128' src='/images/logos/envato-logo-icon128x128.png' />
         </div>
