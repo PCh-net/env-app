@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 const russo_one = Russo_One({ weight: ['400'],subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "envapp",
-  description: "Next app by PCh",
+  title: "Env-app",
+  description: "Next.js app by PCh",
 };
 
 export default function RootLayout({

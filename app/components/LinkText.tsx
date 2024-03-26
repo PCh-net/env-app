@@ -10,7 +10,7 @@ interface TextLinkProps {
 const LinkText: React.FC<TextLinkProps> = ({ to, fontSize, children }) => {
   return (
     <Link href={to} legacyBehavior>
-      <a className={`text-lime-400 underline hover:text-lime-300 ${fontSize} transition-colors duration-400`} target="_blank" rel="noopener noreferrer">
+      <a className={`text-lime-700 underline hover:text-lime-900 ${fontSize} transition-colors duration-400`} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
     </Link>

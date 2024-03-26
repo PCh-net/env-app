@@ -53,6 +53,7 @@ interface Previews {
   icon_with_landscape_preview?: Preview;
   landscape_preview?: Preview;
   icon_preview?: Preview;
+  icon_with_square_preview?: Preview;
 }
 
 interface Preview {
@@ -60,10 +61,11 @@ interface Preview {
   icon_url?: string;
   landscape_url?: string;
   type: string;
+  square_url: string;
 }
 
 
-const CodecanyonDetail = () => {
+const GraphicRiverDetail = () => {
   const [item, setItem] = useState<EnvatoItem | null>(null);
   const params = useParams();
   const itemId = params ? params.itemId as string : null;
@@ -116,11 +118,7 @@ const CodecanyonDetail = () => {
               <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900">Updated at: {convertToDateStr(item.updated_at)}</p>
             </div>
             <div className='w-4/4 md:w-2/4 p-2'>
-              {item.previews.landscape_preview?.landscape_url ? (
-                <img className="w-full object-cover" alt={item?.author_username} src={item.previews.landscape_preview?.landscape_url} />
-              ) : (
-                <img className="w-full object-cover" alt={item?.author_username} src={item.previews.icon_with_video_preview?.landscape_url} />
-              )}
+              <img className="w-full object-cover" alt={item?.author_username} src={item.previews.icon_with_square_preview?.square_url} />
             </div>
           </div>
 
@@ -140,7 +138,7 @@ const CodecanyonDetail = () => {
               </p>
             </div>
             <div className="w-4/4 md:w-1/4 lg:w-1/4 p-2">
-              <img className="w-full m-2" alt="EnvatoMarket-Codecanyon-Dark" src="/images/logos/EnvatoMarket-Codecanyon-Dark.png" />
+              <img className="w-full m-2" alt="EnvatoMarket-Graphicriver-Dark" src="/images/logos/EnvatoMarket-Graphicriver-Dark.png" />
             </div>
           </div>
 
@@ -196,15 +194,15 @@ const CodecanyonDetail = () => {
             </div>
             <div className='w-6/6 md:w-2/6 lg:w-2/6'>
             {
-              item.attributes[5] && item.attributes[5].label.length > 0 &&
+              item.attributes[2] && item.attributes[2].label.length > 0 &&
                 <div>
-                  <h3 className='text-xs md:text-md lg:text-md mt-1 text-lime-950'>{item.attributes[5].label}:</h3>
-                  {Array.isArray(item.attributes[5].value) ? (
-                    item.attributes[5].value.map((value, index) => (
+                  <h3 className='text-xs md:text-md lg:text-md mt-1 text-lime-950'>{item.attributes[2].label}:</h3>
+                  {Array.isArray(item.attributes[2].value) ? (
+                    item.attributes[2].value.map((value, index) => (
                       <p className='text-xs md:text-xs lg:text-xs text-lime-800' key={index}>{value}</p>
                     ))
                   ) : (
-                    <p className='text-xs md:text-xs lg:text-xs text-lime-800'>{item.attributes[5].value}</p>
+                    <p className='text-xs md:text-xs lg:text-xs text-lime-800'>{item.attributes[2].value}</p>
                   )}
                 </div>
             }
@@ -224,4 +222,4 @@ const CodecanyonDetail = () => {
   );
 };
 
-export default CodecanyonDetail;
+export default GraphicRiverDetail;

@@ -206,8 +206,8 @@ const ThemeForestDetail = () => {
           </div>
           
           <div>
-            <h2 className="mt-2 text-md md:text-md lg:text-md md:mt-0 text-lime-900">Author: {item.author_username}</h2>
-            <LinkText to={item.author_url} fontSize='text-xs md:text-xs lg:text-sm'>{item.author_url}</LinkText>
+            <h2 className="mt-2 text-md md:text-md lg:text-md md:mt-0 text-lime-900">Author:</h2>
+            <LinkText to={item.author_url} fontSize='text-xs md:text-xs lg:text-xs'>{item.author_username}</LinkText>
           </div>
         </div>
       ) : (

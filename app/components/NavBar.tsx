@@ -27,6 +27,7 @@ const NavBar = () => {
               <Link href="/" ><MiniButton fullWidth={true} >Home page</MiniButton></Link>
               <Link href="/themeforest" className='pl-2' ><MiniButton fullWidth={true} >Themeforest</MiniButton></Link>
               <Link href="/codecanyon" className='pl-2' ><MiniButton fullWidth={true} >Codecanyon</MiniButton></Link>
+              <Link href="/graphicriver" className='pl-2' ><MiniButton fullWidth={true} >Graphicriver</MiniButton></Link>
             </div>
           </div>
           {/* mobile menu button */}
