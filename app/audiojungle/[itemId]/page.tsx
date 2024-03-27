@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link'
 import Image from 'next/image'
@@ -85,6 +85,7 @@ interface Preview {
 const ThemeForestDetail = () => {
   const [item, setItem] = useState<EnvatoItem | null>(null);
   const [similarProducts, setSimilarProducts] = useState<EnvatoItem[]>([]); // add
+  const playingAudioRef = useRef<HTMLAudioElement | null>(null);
   const params = useParams();
   const itemId = params ? params.itemId as string : null;
   
@@ -139,6 +140,12 @@ useEffect(() => {
 }, [itemId]);
   
 
+const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
+  if (playingAudioRef.current && playingAudioRef.current !== audioElement) {
+    playingAudioRef.current.pause();
+  }
+  playingAudioRef.current = audioElement;
+}, []);
 
   return (
     <main className="container mx-auto p-4">
@@ -181,9 +188,8 @@ useEffect(() => {
                 <img className="w-full object-cover" alt={item?.author_username} src={item.previews.icon_with_square_preview?.square_url} />
               )  : (null)}
 
-
               {item.previews.icon_with_audio_preview.mp3_url ? (
-              <audio controls src={item.previews.icon_with_audio_preview.mp3_url}>
+              <audio controls className="w-full h-8 md:h-8 lg:h-10 rounded-lg shadow-lg bg-lime-300 border-4 border-lime-500" src={item.previews.icon_with_audio_preview.mp3_url}>
                 Your browser does not support the audio tag.
               </audio>
               )  : (null)}
@@ -336,9 +342,19 @@ useEffect(() => {
               )  : (null)}
 
               {similarProduct.previews.icon_with_audio_preview.mp3_url ? (
-              <audio controls src={similarProduct.previews.icon_with_audio_preview.mp3_url}>
-                Your browser does not support the audio tag.
-              </audio>
+              // <audio controls src={similarProduct.previews.icon_with_audio_preview.mp3_url}>
+              //   Your browser does not support the audio tag.
+              // </audio>
+              <audio
+              src={similarProduct.previews.icon_with_audio_preview.mp3_url}
+              controls
+              controlsList="nodownload"
+              preload="none"
+              className="w-full h-8 md:h-8 lg:h-10 rounded-lg shadow-lg"
+              onPlay={(emit) => handlePlayAudio(emit.currentTarget)}
+            >
+              Your browser does not support the audio.
+            </audio>
               )  : (null)}  
 
               {/* <p>ORG:{similarProduct.previews.landscape_preview?.landscape_url}</p>
