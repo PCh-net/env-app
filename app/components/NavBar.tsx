@@ -24,10 +24,12 @@ const NavBar = () => {
             </div>
             {/* primary nav */}
             <div className="hidden md:flex items-center space-x-1">
-              <Link href="/" ><MiniButton fullWidth={true} >Home page</MiniButton></Link>
-              <Link href="/themeforest" className='pl-2' ><MiniButton fullWidth={true} >Themeforest</MiniButton></Link>
-              <Link href="/codecanyon" className='pl-2' ><MiniButton fullWidth={true} >Codecanyon</MiniButton></Link>
-              <Link href="/graphicriver" className='pl-2' ><MiniButton fullWidth={true} >Graphicriver</MiniButton></Link>
+              <Link href="/" ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Home</MiniButton></Link>
+              <Link href="/themeforest" ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Themeforest</MiniButton></Link>
+              <Link href="/codecanyon" ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Codecanyon</MiniButton></Link>
+              <Link href="/graphicriver" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Graphicriver</MiniButton></Link>
+              <Link href="/photodune" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Photodune</MiniButton></Link>
+              <Link href="/videohive" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Videohive</MiniButton></Link>
             </div>
           </div>
           {/* mobile menu button */}
@@ -43,6 +45,10 @@ const NavBar = () => {
         <div className='text-xl text-lime-100 hover:text-lime-300'>
           <Link href="/" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Home page<NavigateBeforeOutlined /></MiniButton></Link>
           <Link className='mt-4' href="/themeforest" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Themeforest<NavigateBeforeOutlined /></MiniButton></Link>
+          <Link className='mt-4' href="/codecanyon" ><MiniButton fullWidth={true} ><NavigateNextOutlined />CodeCanyon<NavigateBeforeOutlined /></MiniButton></Link>
+          <Link className='mt-4' href="/graphicriver" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Graphicriver<NavigateBeforeOutlined /></MiniButton></Link>
+          <Link className='mt-4' href="/photodune" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Photodune<NavigateBeforeOutlined /></MiniButton></Link>
+          <Link className='mt-4' href="/videohive" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Videohive<NavigateBeforeOutlined /></MiniButton></Link>
         </div>
       </div>
     </nav>

@@ -81,7 +81,7 @@ interface Preview {
 }
 
 
-const GraphicRiverDetail = () => {
+const VideoHiveDetail = () => {
   const [item, setItem] = useState<EnvatoItem | null>(null);
   const [similarProducts, setSimilarProducts] = useState<EnvatoItem[]>([]); // add
   const params = useParams();
@@ -224,13 +224,13 @@ useEffect(() => {
             {
               item.attributes && item.attributes.length > 0 &&
                 <div>
-                  <h3 className='text-xs md:text-md lg:text-md mt-1 text-lime-950'>{item.attributes[0].label}:</h3>
-                  {Array.isArray(item.attributes[0].value) ? (
-                    item.attributes[0].value.map((value, index) => (
+                  <h3 className='text-xs md:text-md lg:text-md mt-1 text-lime-950'>{item.attributes[1].label}:</h3>
+                  {Array.isArray(item.attributes[1].value) ? (
+                    item.attributes[1].value.map((value, index) => (
                       <p className='text-xs md:text-xs lg:text-xs text-lime-800' key={index}>{value}</p>
                     ))
                   ) : (
-                    <p className='text-xs md:text-xs lg:text-xs text-lime-800'>{item.attributes[0].value}</p>
+                    <p className='text-xs md:text-xs lg:text-xs text-lime-800'>{item.attributes[1].value}</p>
                   )}
                 </div>
             }
@@ -346,4 +346,4 @@ useEffect(() => {
   );
 };
 
-export default GraphicRiverDetail;
+export default VideoHiveDetail;

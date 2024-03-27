@@ -81,7 +81,7 @@ interface Preview {
 }
 
 
-const GraphicRiverDetail = () => {
+const PhotoDuneDetail = () => {
   const [item, setItem] = useState<EnvatoItem | null>(null);
   const [similarProducts, setSimilarProducts] = useState<EnvatoItem[]>([]); // add
   const params = useParams();
@@ -134,7 +134,7 @@ useEffect(() => {
     })
     .catch(error => console.error("Failed to fetch item details:", error));
 }, [itemId]);
-  
+
 
   return (
     <main className="container mx-auto p-4">
@@ -237,13 +237,13 @@ useEffect(() => {
             </div>
             <div className='w-6/6 md:w-2/6 lg:w-2/6'>
             {
-              item.attributes && item.attributes[2] && (
+              item.attributes && item.attributes[1] && (
                 <div>
                   <div className='text-xs md:text-xs lg:text-xs text-lime-800'>
-                    <p className='text-xs md:text-md lg:text-md mt-1 text-lime-950'>{item.attributes[2].label}:</p> 
-                    {Array.isArray(item.attributes[2].value)
-                      ? item.attributes[2].value.join(", ")
-                      : item.attributes[2].value}
+                    <p className='text-xs md:text-md lg:text-md mt-1 text-lime-950'>{item.attributes[1].label}:</p> 
+                    {Array.isArray(item.attributes[1].value)
+                      ? item.attributes[1].value.join(", ")
+                      : item.attributes[1].value}
                   </div>
                 </div>
               )
@@ -251,15 +251,15 @@ useEffect(() => {
             </div>
             <div className='w-6/6 md:w-2/6 lg:w-2/6'>
             {
-              item.attributes[3] && item.attributes[3].label.length > 0 &&
+              item.attributes[6] && item.attributes[6].label.length > 0 &&
                 <div>
-                  <h3 className='text-xs md:text-md lg:text-md mt-1 text-lime-950'>{item.attributes[3].label}:</h3>
-                  {Array.isArray(item.attributes[3].value) ? (
-                    item.attributes[3].value.map((value, index) => (
+                  <h3 className='text-xs md:text-md lg:text-md mt-1 text-lime-950'>{item.attributes[6].label}:</h3>
+                  {Array.isArray(item.attributes[6].value) ? (
+                    item.attributes[6].value.map((value, index) => (
                       <p className='text-xs md:text-xs lg:text-xs text-lime-800' key={index}>{value}</p>
                     ))
                   ) : (
-                    <p className='text-xs md:text-xs lg:text-xs text-lime-800'>{item.attributes[3].value}</p>
+                    <p className='text-xs md:text-xs lg:text-xs text-lime-800'>{item.attributes[6].value}</p>
                   )}
                 </div>
             }
@@ -346,4 +346,4 @@ useEffect(() => {
   );
 };
 
-export default GraphicRiverDetail;
+export default PhotoDuneDetail;
