@@ -30,6 +30,7 @@ const NavBar = () => {
               <Link href="/graphicriver" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Graphicriver</MiniButton></Link>
               <Link href="/photodune" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Photodune</MiniButton></Link>
               <Link href="/videohive" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Videohive</MiniButton></Link>
+              <Link href="/audiojungle" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >AudioJungle</MiniButton></Link>
             </div>
           </div>
           {/* mobile menu button */}
@@ -49,6 +50,7 @@ const NavBar = () => {
           <Link className='mt-4' href="/graphicriver" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Graphicriver<NavigateBeforeOutlined /></MiniButton></Link>
           <Link className='mt-4' href="/photodune" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Photodune<NavigateBeforeOutlined /></MiniButton></Link>
           <Link className='mt-4' href="/videohive" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Videohive<NavigateBeforeOutlined /></MiniButton></Link>
+          <Link className='mt-4' href="/audiojungle" ><MiniButton fullWidth={true} ><NavigateNextOutlined />AudioJungle<NavigateBeforeOutlined /></MiniButton></Link>
         </div>
       </div>
     </nav>
