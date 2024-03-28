@@ -1,60 +1,103 @@
 'use client'
-import React, { useState } from 'react';
-import Link from 'next/link'
-import { MenuOutlined, NavigateNextOutlined, NavigateBeforeOutlined, MenuOpenOutlined } from '@mui/icons-material';
-import MiniButton from './MiniButton';
+
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import MidButton from './MidButton';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { NavigateNextOutlined, OpenInNew } from '@mui/icons-material';
 import Image from 'next/image'
+import Link from 'next/link'
 
+export default function TemporaryDrawer() {
+  const [open, setOpen] = React.useState(false);
 
-const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleDrawer = (newOpen: boolean) => () => {
+    setOpen(newOpen);
+  };
 
   return (
-    <nav>
-      <div className="mx-auto">
-        <div className="flex justify-between items-center">
-          <div className="flex space-x-4">
-            {/* logo */}
-            <div>
-              <Link href="/" className="flex items-center py-2 px-2">
-                <Image src="/images/android-icon-192x192.png" className='w-12 h-12' alt="android-icon-192x192" width={192} height={192} priority />
+    <div>
+      <div className='flex'>
+        <div className='flex w-2/3 items-center py-4 px-4'>
+          <MidButton size={'text-md md:text-md lg:text-md'} onClick={toggleDrawer(true)}>MENU</MidButton>
+        </div>
+        <div className='flex w-1/3 py-4 px-4 justify-end'>
+          <Link href="/">
+            <Image src="/images/android-icon-192x192.png" className='w-8 h-8' alt="android-icon-192x192" width={192} height={192} priority />
+          </Link>
+        </div>
+      </div>
+      <Drawer
+        open={open}
+        onClose={toggleDrawer(false)}
+        PaperProps={{
+          sx: {
+            width: 250,
+            background: 'radial-gradient(circle at top, #84cc16, #bef264)'
+          },
+        }}
+      >
+
+        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+          <div className='flex'>
+            <div className='w-1/3 items-center py-4 px-4'>
+              <Link href="/">
+                <Image src="/images/android-icon-192x192.png" alt="android-icon-192x192" width={192} height={192} priority />
               </Link>
             </div>
-            {/* primary nav */}
-            <div className="hidden md:flex items-center space-x-1">
-              <Link href="/" ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Home</MiniButton></Link>
-              <Link href="/themeforest" ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Themeforest</MiniButton></Link>
-              <Link href="/codecanyon" ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Codecanyon</MiniButton></Link>
-              <Link href="/graphicriver" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Graphicriver</MiniButton></Link>
-              <Link href="/photodune" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Photodune</MiniButton></Link>
-              <Link href="/videohive" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >Videohive</MiniButton></Link>
-              <Link href="/audiojungle" className='pl-2' ><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} >AudioJungle</MiniButton></Link>
+            <div className='w-2/3'>
+              <h2 className='p-6'>MENU</h2>
             </div>
           </div>
-          {/* mobile menu button */}
-          <div className="md:hidden flex items-center mr-4">
-            <button onClick={toggleMenu} className="mobile-menu-button bg-lime-400 rounded-xl p-4">
-            {isOpen ? <MenuOpenOutlined /> : <MenuOutlined />}
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* mobile menu */}
-      <div className={isOpen ? 'mobile-menu md:hidden' : 'hidden'}>
-        <div className='text-xl text-lime-100 hover:text-lime-300'>
-          <Link href="/" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Home page<NavigateBeforeOutlined /></MiniButton></Link>
-          <Link className='mt-4' href="/themeforest" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Themeforest<NavigateBeforeOutlined /></MiniButton></Link>
-          <Link className='mt-4' href="/codecanyon" ><MiniButton fullWidth={true} ><NavigateNextOutlined />CodeCanyon<NavigateBeforeOutlined /></MiniButton></Link>
-          <Link className='mt-4' href="/graphicriver" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Graphicriver<NavigateBeforeOutlined /></MiniButton></Link>
-          <Link className='mt-4' href="/photodune" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Photodune<NavigateBeforeOutlined /></MiniButton></Link>
-          <Link className='mt-4' href="/videohive" ><MiniButton fullWidth={true} ><NavigateNextOutlined />Videohive<NavigateBeforeOutlined /></MiniButton></Link>
-          <Link className='mt-4' href="/audiojungle" ><MiniButton fullWidth={true} ><NavigateNextOutlined />AudioJungle<NavigateBeforeOutlined /></MiniButton></Link>
-        </div>
-      </div>
-    </nav>
+          <Divider />
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton href='/'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>Home page
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton href='/themeforest'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>Themeforest
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton href='/codecanyon'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>Codecanyon
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton href='/graphicriver'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>Graphicriver
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton href='/photodune'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>Photodune
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton href='/videohive'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>Videohive
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton href='/audiojungle'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>AudioJungle
+              </ListItemButton>
+            </ListItem>
+            <img className="w-full object-cover p-6" alt='EnvatoMarket-Logo-Trans-Black' src="/images/logos/EnvatoMarket-Logo-Trans-Black.png" />
+          </List>
+        </Box>
+      </Drawer>
+    </div>
   );
-};
-
-export default NavBar;
+}

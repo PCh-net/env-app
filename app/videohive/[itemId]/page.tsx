@@ -9,7 +9,6 @@ import 'tailwindcss/tailwind.css';
 import MidButton from '../../components/MidButton';
 import SiteLogo from '../../components/SiteLogo';
 import { NavigateNextOutlined, OpenInNew } from '@mui/icons-material';
-// import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 interface ApiResponse {
   productDetails: EnvatoItem;
