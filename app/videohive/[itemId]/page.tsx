@@ -3,9 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link'
-import Image from 'next/image'
 import NavBar from '../../components/NavBar';
-import LinkText from '../../components/LinkText'
 import LinkTextLight from '../../components/LinkTextLight'
 import 'tailwindcss/tailwind.css';
 import MidButton from '../../components/MidButton';
@@ -135,6 +133,8 @@ useEffect(() => {
     .catch(error => console.error("Failed to fetch item details:", error));
 }, [itemId]);
   
+console.log(item)
+console.log(similarProducts)
 
   return (
     <main className="container mx-auto p-4">
@@ -161,7 +161,7 @@ useEffect(() => {
               ) : (null)}
 
               {item.previews.icon_with_video_preview?.video_url ? (
-                <video width="590" height="332" controls autoPlay loop muted playsInline preload="none">
+                <video width="590" height="332" controls autoPlay loop playsInline preload="none" poster={item.previews.icon_with_video_preview.landscape_url}>
                 <source src={item.previews.icon_with_video_preview?.video_url} type="video/mp4" />
                 <track
                   src={item.previews.icon_with_video_preview?.video_url}
@@ -303,7 +303,7 @@ useEffect(() => {
               ) : (null)}
 
               {similarProduct.previews.icon_with_video_preview?.video_url ? (
-                <video width="590" height="332" controls autoPlay loop muted playsInline preload="none">
+                <video width="590" height="332" controls loop muted playsInline preload="none" poster={similarProduct.previews.icon_with_video_preview?.landscape_url}>
                 <source src={similarProduct.previews.icon_with_video_preview?.video_url} type="video/mp4" />
                 <track
                   src={similarProduct.previews.icon_with_video_preview?.video_url}
