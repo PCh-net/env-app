@@ -8,8 +8,8 @@ import LinkTextLight from '../../components/LinkTextLight'
 import 'tailwindcss/tailwind.css';
 import MidButton from '../../components/MidButton';
 import SiteLogo from '../../components/SiteLogo';
-import { NavigateNextOutlined } from '@mui/icons-material';
-
+import { NavigateNextOutlined, OpenInNew } from '@mui/icons-material';
+// import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 interface ApiResponse {
   productDetails: EnvatoItem;
@@ -133,8 +133,7 @@ useEffect(() => {
     .catch(error => console.error("Failed to fetch item details:", error));
 }, [itemId]);
   
-console.log(item)
-console.log(similarProducts)
+
 
   return (
     <main className="container mx-auto p-4">
@@ -201,11 +200,11 @@ console.log(similarProducts)
           </div>
 
           <div className='flex flex-col md:flex-row lg:flex-row mt-2'>
-            <div className="w-4/4 md:w-2/4 lg:w-2/4">
-              <Link href={item.url}><MidButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} ><NavigateNextOutlined />Preview Envato Market</MidButton></Link>
+            <div className="w-4/4 md:w-2/4 lg:w-2/4 p-4">
+              <img className="w-full object-cover" alt='EnvatoMarket-Logo-Trans-Black' src="/images/logos/EnvatoMarket-Logo-Trans-Black.png" />
             </div>
-            <div className='w-4/4 md:w-2/4 lg:w-2/4'>
-
+            <div className='w-4/4 md:w-2/4 lg:w-2/4 p-4 flex justify-end align-bottom'>
+              <LinkTextLight to={item.url} fontSize='text-xs md:text-xs lg:text-xs'>Preview Envato Market <OpenInNew className='text-xs md:text-xs lg:text-xs' /></LinkTextLight>
             </div>
           </div>
         </div>
@@ -288,7 +287,7 @@ console.log(similarProducts)
           {similarProduct.previews.icon_with_video_preview?.icon_url &&<div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={similarProduct.name} src={similarProduct.previews.icon_with_video_preview?.icon_url} /></div>}
           {similarProduct.previews.icon_with_thumbnail_preview?.icon_url &&<div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={similarProduct.name} src={similarProduct.previews.icon_with_thumbnail_preview?.icon_url} /></div>}
             <h2 className="text-lime-300 text-md md:text-md lg:text-lg md:mt-0 line-clamp-2 text-ellipsis min-h-[2rem]">{similarProduct.name}</h2>
-            <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900 line-clamp-4 text-ellipsis min-h-[4rem] ...">{similarProduct.summary}</p>
+            <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900 line-clamp-4 text-ellipsis min-h-[2rem] ...">{similarProduct.description}</p>
             {/* <>
               {similarProduct.previews.landscape_preview?.landscape_url && <p>Value 1 OK</p>}
               {similarProduct.previews.icon_with_video_preview?.icon_url && <p>Value 2 OK</p>}
@@ -303,7 +302,7 @@ console.log(similarProducts)
               ) : (null)}
 
               {similarProduct.previews.icon_with_video_preview?.video_url ? (
-                <video width="590" height="332" controls loop muted playsInline preload="none" poster={similarProduct.previews.icon_with_video_preview?.landscape_url}>
+                <video width="590" height="332" controls muted playsInline preload="none" poster={similarProduct.previews.icon_with_video_preview?.landscape_url}>
                 <source src={similarProduct.previews.icon_with_video_preview?.video_url} type="video/mp4" />
                 <track
                   src={similarProduct.previews.icon_with_video_preview?.video_url}

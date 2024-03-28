@@ -18,7 +18,7 @@ export default function Home() {
           </div>
           <div className='flex flex-col md:flex-row lg:flex-row mt-2'>
             <div className="w-6/6 md:w-2/6 lg:w-2/6">
-            <img className="w-full object-cover" alt='' src="/images/logos/EnvatoMarket-Logo-Trans-White.png" />
+            <img className="w-full object-cover" alt='EnvatoMarket-Logo-Trans-White' src="/images/logos/EnvatoMarket-Logo-Trans-White.png" />
             </div>
             <div className='w-6/6 md:w-4/6 lg:w-4/6'>
 
