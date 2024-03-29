@@ -51,10 +51,16 @@ const PagePhotoDune = () => {
 return (
     <main className="container mx-auto p-4">
       <NavBar/>
-      <div className="w-full items-center justify-between lg:flex">
-        <h1 className='text-2xl md:text-3xl lg:text-4xl bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent'>Popular items:</h1>
-        <p className='text-2xl md:text-3xl lg:text-4xl bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent'>Last three months</p>
+      <div className="flex items-center mt-6 mb-5 rounded-lg p-4 shadow-lg bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-lime-400 via-lime-500 to-lime-700">
+        <div className='w-3/4'>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl bg-gradient-to-bl from-lime-600 via-lime-700 to-lime-800 bg-clip-text text-transparent">Popular items</h2>
+          <p className='text-md md:text-lg lg:text-lg mt-1 text-lime-300'>Last three months</p>
+        </div>
+        <div className='w-1/4 flex justify-center'>
+          <Image src="/images/logos/EnvatoMarket-Videohive-Dark.png" alt="EnvatoMarket-Videohive-Dark" width={403} height={82} />
+        </div>
       </div>
+
       <div className="container mx-auto p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
         {items.length > 0 ? (
