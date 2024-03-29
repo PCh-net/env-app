@@ -43,7 +43,7 @@ const PageThemeforest = () => {
       const data = await response.json();
 
       setItems(data.popular.items_last_week);
-      console.log(data);
+
     };
 
     fetchData();
