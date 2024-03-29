@@ -10,7 +10,7 @@ import LinkTextLight from '../../components/LinkTextLight'
 import 'tailwindcss/tailwind.css';
 import MidButton from '../../components/MidButton';
 import SiteLogo from '../../components/SiteLogo';
-import { NavigateNextOutlined } from '@mui/icons-material';
+import { OpenInNew } from '@mui/icons-material';
 
 
 interface ApiResponse {
@@ -147,6 +147,7 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
   playingAudioRef.current = audioElement;
 }, []);
 
+
   return (
     <main className="container mx-auto p-4">
       <NavBar />
@@ -157,7 +158,7 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
             <div className='w-4/4 md:w-2/4 p-2'>
               <h2 className="mt-2 text-xl md:text-xl lg:text-2xl md:mt-0 text-lime-900 line-clamp-3 text-ellipsis min-h-[3rem]">{item?.name}</h2>
               <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900">
-                {item.wordpress_theme_metadata?.description ? delTagHTMLandLinki(item.wordpress_theme_metadata.description) : ''}
+                {item.description ? delTagHTMLandLinki(item.description) : ''}
               </p>
               <p className="text-xs md:text-md lg:text-md mt-2 text-lime-900">Author: {item?.author_username}</p>
               <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900">ID: {item?.id}</p>
@@ -189,7 +190,7 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
               )  : (null)}
 
               {item.previews.icon_with_audio_preview.mp3_url ? (
-              <audio controls className="w-full h-8 md:h-8 lg:h-10 rounded-lg shadow-lg bg-lime-300 border-4 border-lime-500" src={item.previews.icon_with_audio_preview.mp3_url}>
+              <audio controls className="w-full h-10 md:h-10 lg:h-10 rounded-lg border-4 border-lime-500" src={item.previews.icon_with_audio_preview.mp3_url}>
                 Your browser does not support the audio tag.
               </audio>
               )  : (null)}
@@ -218,11 +219,11 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
           </div>
 
           <div className='flex flex-col md:flex-row lg:flex-row mt-2'>
-            <div className="w-4/4 md:w-2/4 lg:w-2/4">
-              <Link href={item.url}><MidButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} ><NavigateNextOutlined />Preview Envato Market</MidButton></Link>
+            <div className="w-4/4 md:w-2/4 lg:w-2/4 p-4">
+              <img className="w-full object-cover" alt='EnvatoMarket-Logo-Trans-Black' src="/images/logos/EnvatoMarket-Logo-Trans-Black.png" />
             </div>
-            <div className='w-4/4 md:w-2/4 lg:w-2/4'>
-
+            <div className='w-4/4 md:w-2/4 lg:w-2/4 p-4 flex justify-end align-bottom'>
+              <LinkTextLight to={item.url} fontSize='text-xs md:text-xs lg:text-xs'>Preview Envato Market <OpenInNew className='text-xs md:text-xs lg:text-xs' /></LinkTextLight>
             </div>
           </div>
         </div>
@@ -342,15 +343,12 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
               )  : (null)}
 
               {similarProduct.previews.icon_with_audio_preview.mp3_url ? (
-              // <audio controls src={similarProduct.previews.icon_with_audio_preview.mp3_url}>
-              //   Your browser does not support the audio tag.
-              // </audio>
               <audio
               src={similarProduct.previews.icon_with_audio_preview.mp3_url}
               controls
               controlsList="nodownload"
               preload="none"
-              className="w-full h-8 md:h-8 lg:h-10 rounded-lg shadow-lg"
+              className="w-full h-8 md:h-8 lg:h-10 rounded-lg shadow-lg my-2"
               onPlay={(emit) => handlePlayAudio(emit.currentTarget)}
             >
               Your browser does not support the audio.
