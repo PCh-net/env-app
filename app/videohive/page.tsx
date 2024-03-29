@@ -61,7 +61,7 @@ return (
           <p className='text-md md:text-lg lg:text-lg mt-1 text-lime-300'>Last week</p>
         </div>
         <div className='w-1/4 flex justify-center'>
-          <Image src="/images/logos/EnvatoMarket-Videohive-Dark.png" alt="EnvatoMarket-Videohive-Dark" width={427} height={82} />
+          <Image src="/images/logos/EnvatoMarket-Videohive-Dark.png" alt="EnvatoMarket-Videohive-Dark" width={403} height={82} />
         </div>
       </div>
 
