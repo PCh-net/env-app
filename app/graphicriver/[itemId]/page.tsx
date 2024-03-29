@@ -10,7 +10,7 @@ import LinkTextLight from '../../components/LinkTextLight'
 import 'tailwindcss/tailwind.css';
 import MidButton from '../../components/MidButton';
 import SiteLogo from '../../components/SiteLogo';
-import { NavigateNextOutlined } from '@mui/icons-material';
+import { OpenInNew } from '@mui/icons-material';
 
 
 interface ApiResponse {
@@ -201,11 +201,11 @@ useEffect(() => {
           </div>
 
           <div className='flex flex-col md:flex-row lg:flex-row mt-2'>
-            <div className="w-4/4 md:w-2/4 lg:w-2/4">
-              <Link href={item.url}><MidButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false} ><NavigateNextOutlined />Preview Envato Market</MidButton></Link>
+            <div className="w-4/4 md:w-2/4 lg:w-2/4 p-4">
+              <img className="w-full object-cover" alt='EnvatoMarket-Logo-Trans-Black' src="/images/logos/EnvatoMarket-Logo-Trans-Black.png" />
             </div>
-            <div className='w-4/4 md:w-2/4 lg:w-2/4'>
-
+            <div className='w-4/4 md:w-2/4 lg:w-2/4 p-4 flex justify-end align-bottom'>
+              <LinkTextLight to={item.url} fontSize='text-xs md:text-xs lg:text-xs'>Preview Envato Market <OpenInNew className='text-xs md:text-xs lg:text-xs' /></LinkTextLight>
             </div>
           </div>
         </div>
@@ -316,9 +316,21 @@ useEffect(() => {
               )  : (null)}
 
               {similarProduct.previews.icon_with_square_preview?.square_url ? (
-                <img className="w-full object-cover py-2" alt={item?.author_username} src={similarProduct.previews.icon_with_square_preview?.square_url} />
+                <div className='flex justify-center items-center'>
+                  <div className="relative w-[280px] h-[300px] overflow-hidden rounded-lg justify-center">
+                    <Image
+                      src={similarProduct.previews.icon_with_square_preview?.square_url}
+                      alt={similarProduct.author_username}
+                      fill
+                      style={{
+                        objectFit: 'cover',
+                        objectPosition: 'top',
+                      }}
+                      unoptimized={true}
+                    />
+                  </div>
+                </div>
               )  : (null)}
-
               {similarProduct.previews.thumbnail_preview?.small_url ? (
                 <img className="w-full object-cover py-2" alt={item?.author_username} src={similarProduct.previews.thumbnail_preview?.large_url} />
               )  : (null)}
