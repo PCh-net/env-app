@@ -6,7 +6,7 @@ import { metadata } from '../layout';
 import Link from 'next/link'
 import 'tailwindcss/tailwind.css';
 import NavBar from '../components/NavBar';
-import MiniButton from '../components/MiniButton';
+import Footer from '../components/Footer';
 import MidButton from '../components/MidButton';
 
 
@@ -111,6 +111,7 @@ return (
         )}
         </div>
       </div>
+      <Footer/>
     </main>
   );
 };

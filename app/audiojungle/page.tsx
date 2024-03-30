@@ -7,6 +7,7 @@ import Link from 'next/link'
 import 'tailwindcss/tailwind.css';
 import NavBar from '../components/NavBar';
 import MiniButton from '../components/MiniButton';
+import Footer from '../components/Footer';
 
 interface Items {
   id: string;
@@ -111,6 +112,7 @@ return (
         )}
         </div>
       </div>
+      <Footer/>
     </main>
   );
 };
