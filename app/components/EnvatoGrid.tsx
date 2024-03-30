@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import UniversalCard from './UniversalCard';
 import MiniButton from './MiniButton';
+import Separator from '../components/Separator';
 
 interface Item {
   id: string;
@@ -84,12 +85,7 @@ const EnvatoGrid: React.FC = () => {
       />
   </div>
 
-  <div className="mt-6 mb-5 w-12/12 rounded-lg px-4 py-2 shadow-lg md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-lime-400 via-lime-500 to-lime-700">
-    <div>
-      <h2 className="text-2xl md:text-3xl lg:text-4xl bg-gradient-to-bl from-lime-600 via-lime-700 to-lime-800 bg-clip-text text-transparent">Random new file</h2>
-      <p className='text-xs md:text-md lg:text-lg mt-1 text-lime-900'>Explore a collection of top-quality assets</p>
-    </div>
-  </div>
+  <Separator title="Random new file" subtitle="Explore a collection of top-quality assets" />
 
 
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -98,7 +94,7 @@ const EnvatoGrid: React.FC = () => {
         <Link key={index} href={`/themeforest/${item.id}`}>
           <div className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
             <div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={item.item} src={item.thumbnail} /></div>
-            <h3 className="mt-4 text-md md:text-md lg:text-lg md:mt-0 bg-gradient-to-tl from-lime-900 via-lime-800 to-lime-700 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[2rem] truncate ...">{item.item}</h3>
+            <h3 className="mt-4 text-md md:text-md lg:text-lg md:mt-0 bg-gradient-to-tl from-lime-900 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[2rem] truncate ...">{item.item}</h3>
             <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">{item.user}</p>
             <div className="flex bottom-4 right-4 w-3/3 md:w-3/3 lg:w-1/3 justify-end mt-2">
               <MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={true}>More info</MiniButton>

@@ -1,10 +1,9 @@
 import React from 'react';
 import EnvatoGrid from './components/EnvatoGrid';
-import Footer from './components/Footer';
 import 'tailwindcss/tailwind.css';
 import NavBar from './components/NavBar';
 import LinkTextLight from './components/LinkTextLight'
-
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -17,15 +16,9 @@ export default function Home() {
             <p className='text-xs md:text-md lg:text-lg mt-1 text-lime-900'>Explore a collection of top-quality assets</p>
           </div>
           <div className='flex flex-col md:flex-row lg:flex-row mt-2'>
-            <div className="w-6/6 md:w-2/6 lg:w-2/6">
-            <img className="w-full object-cover" alt='EnvatoMarket-Logo-Trans-White' src="/images/logos/EnvatoMarket-Logo-Trans-White.png" />
+            <div className="w-6/6 md:w-2/6 lg:w-2/6 py-4">
+            <Image src="/images/logos/EnvatoMarket-Logo-Trans-Black.png" alt="EnvatoMarket-Logo-Trans-Black" width={689} height={82} />
             </div>
-            <div className='w-6/6 md:w-4/6 lg:w-4/6'>
-
-            </div>
-          </div>
-          <div className='mt-2'>
-            <LinkTextLight to='/' fontSize='text-xs md:text-xs lg:text-xs'>Start</LinkTextLight>
           </div>
         </div>
       </div>
