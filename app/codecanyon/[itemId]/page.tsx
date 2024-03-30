@@ -8,7 +8,7 @@ import NavBar from '../../components/NavBar';
 import LinkText from '../../components/LinkText'
 import LinkTextLight from '../../components/LinkTextLight'
 import 'tailwindcss/tailwind.css';
-import MidButton from '../../components/MidButton';
+import Footer from '../../components/Footer';
 import SiteLogo from '../../components/SiteLogo';
 import { OpenInNew } from '@mui/icons-material';
 
@@ -160,7 +160,7 @@ useEffect(() => {
               ) : (null)}
 
               {item.previews.icon_with_video_preview?.video_url ? (
-                <video width="590" height="332" controls autoPlay loop muted playsInline preload="none">
+                <video width="590" height="332" controls autoPlay loop playsInline preload="none">
                 <source src={item.previews.icon_with_video_preview?.video_url} type="video/mp4" />
                 <track
                   src={item.previews.icon_with_video_preview?.video_url}
@@ -340,7 +340,7 @@ useEffect(() => {
         )}
       </div>
       {/* similarProducts END */}
-
+      <Footer/>
     </main>
   );
 };

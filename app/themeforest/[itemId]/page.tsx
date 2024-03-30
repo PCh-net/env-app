@@ -12,7 +12,7 @@ import MidButton from '../../components/MidButton';
 import SiteLogo from '../../components/SiteLogo';
 import { OpenInNew } from '@mui/icons-material';
 import Separator from '../../components/Separator';
-
+import Footer from '../../components/Footer';
 
 interface ApiResponse {
   productDetails: EnvatoItem;
@@ -344,7 +344,7 @@ useEffect(() => {
         )}
       </div>
       {/* similarProducts END */}
-
+      <Footer/>
     </main>
   );
 };

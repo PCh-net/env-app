@@ -6,9 +6,9 @@ import Link from 'next/link'
 import NavBar from '../../components/NavBar';
 import LinkTextLight from '../../components/LinkTextLight'
 import 'tailwindcss/tailwind.css';
-import MidButton from '../../components/MidButton';
+import Footer from '../../components/Footer';
 import SiteLogo from '../../components/SiteLogo';
-import { NavigateNextOutlined, OpenInNew } from '@mui/icons-material';
+import {  OpenInNew } from '@mui/icons-material';
 
 interface ApiResponse {
   productDetails: EnvatoItem;
@@ -339,7 +339,7 @@ useEffect(() => {
         )}
       </div>
       {/* similarProducts END */}
-
+      <Footer/>
     </main>
   );
 };

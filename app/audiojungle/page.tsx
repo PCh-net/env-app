@@ -93,15 +93,12 @@ return (
               )  : (null)}  
               
               <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">{item.user} - sales: {item.sales}</p>
-              {/* <div className="flex bottom-4 right-4 w-1/3 justify-end mt-2">
-                <Image src="/images/logos/EnvatoMarket-Audiojungle-Dark.png" alt="EnvatoMarket-Audiojungle-Dark" width={427} height={82} />
-              </div> */}
               <div className='flex justify-center'>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
                   <Image src="/images/logos/EnvatoMarket-Audiojungle-Dark.png" alt="EnvatoMarket-Audiojungle-Dark" width={397} height={82} />
                 </div>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
-                <MiniButton size={'text-xs md:text-xs lg:text-lg'} fullWidth={false}>More info</MiniButton>
+                <MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false}>More info</MiniButton>
                 </div>
               </div>
             </div>

@@ -8,7 +8,7 @@ import NavBar from '../../components/NavBar';
 import LinkText from '../../components/LinkText'
 import LinkTextLight from '../../components/LinkTextLight'
 import 'tailwindcss/tailwind.css';
-import MidButton from '../../components/MidButton';
+import Footer from '../../components/Footer';
 import SiteLogo from '../../components/SiteLogo';
 import { OpenInNew } from '@mui/icons-material';
 
@@ -341,7 +341,7 @@ console.log(item)
         )}
       </div>
       {/* similarProducts END */}
-
+      <Footer/>
     </main>
   );
 };
