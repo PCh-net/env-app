@@ -15,6 +15,8 @@ const SiteLogo: React.FC<SiteLogoProps> = ({ site }) => {
     return <img className="w-full m-2" alt="EnvatoMarket-Codecanyon-Dark" src="/images/logos/EnvatoMarket-Codecanyon-Dark.png" />;
   } else if (site.includes("graphicriver.net")) {
     return <img className="w-full m-2" alt="EnvatoMarket-Graphicriver-Dark" src="/images/logos/EnvatoMarket-Graphicriver-Dark.png" />;
+  } else if (site.includes("audiojungle.net")) {
+    return <img className="w-full m-2" alt="EnvatoMarket-Audiojungle-Dark" src="/images/logos/EnvatoMarket-Audiojungle-Dark.png" />;
   } else {
     return null;
   }

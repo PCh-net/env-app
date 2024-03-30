@@ -6,7 +6,7 @@ import { metadata } from '../layout';
 import Link from 'next/link'
 import 'tailwindcss/tailwind.css';
 import NavBar from '../components/NavBar';
-
+import MiniButton from '../components/MiniButton';
 
 interface Items {
   id: string;
@@ -71,8 +71,13 @@ return (
               <img className="w-full object-cover py-2" alt={item.user} src={item.live_preview_url} />
               <h2 className="mt-2 text-sm md:text-md lg:text-xl md:mt-0 bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-3 text-ellipsis min-h-[3rem]">{item.item}</h2>
               <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">{item.user} - sales: {item.sales}</p>
-              <div className="flex bottom-4 right-4 w-1/3 justify-end mt-2">
-                <Image src="/images/logos/EnvatoMarket-Codecanyon-Dark.png" alt="EnvatoMarket-Codecanyon-Dark" width={427} height={82} />
+              <div className='flex justify-center'>
+                <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
+                  <Image src="/images/logos/EnvatoMarket-Codecanyon-Dark.png" alt="EnvatoMarket-Codecanyon-Dark" width={393} height={82} />
+                </div>
+                <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
+                <MiniButton size={'text-xs md:text-xs lg:text-lg'} fullWidth={false}>More info</MiniButton>
+                </div>
               </div>
             </div>
           </Link>

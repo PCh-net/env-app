@@ -6,7 +6,7 @@ import { metadata } from '../layout';
 import Link from 'next/link'
 import 'tailwindcss/tailwind.css';
 import NavBar from '../components/NavBar';
-
+import MiniButton from '../components/MiniButton';
 
 interface Items {
   id: string;
@@ -83,8 +83,13 @@ return (
                 </div>
               </div>
               <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">{item.user} - sales: {item.sales}</p>
-              <div className="flex bottom-4 right-4 w-1/3 justify-end mt-2">
-                <Image src="/images/logos/EnvatoMarket-Graphicriver-Dark.png" alt="EnvatoMarket-Graphicriver-Dark" width={896} height={226} />
+              <div className='flex justify-center'>
+                <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
+                  <Image src="/images/logos/EnvatoMarket-Graphicriver-Dark.png" alt="EnvatoMarket-Graphicriver-Dark" width={325} height={82} />
+                </div>
+                <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
+                <MiniButton size={'text-xs md:text-xs lg:text-lg'} fullWidth={false}>More info</MiniButton>
+                </div>
               </div>
             </div>
           </Link>

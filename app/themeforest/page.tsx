@@ -6,7 +6,7 @@ import { metadata } from '../layout';
 import Link from 'next/link'
 import 'tailwindcss/tailwind.css';
 import NavBar from '../components/NavBar';
-
+import MiniButton from '../components/MiniButton';
 
 interface Items {
   id: string;
@@ -54,12 +54,12 @@ return (
     <main className="container mx-auto p-4">
       <NavBar/>
       <div className="flex items-center mt-6 mb-5 rounded-lg p-4 shadow-lg bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-lime-400 via-lime-500 to-lime-700">
-        <div className='w-2/4'>
+        <div className='w-3/4'>
           <h2 className="text-2xl md:text-3xl lg:text-4xl bg-gradient-to-bl from-lime-600 via-lime-700 to-lime-800 bg-clip-text text-transparent">Popular items</h2>
           <p className='text-md md:text-lg lg:text-lg mt-1 text-lime-300'>Last week</p>
         </div>
-        <div className='w-2/4 flex justify-center'>
-          <Image src="/images/logos/EnvatoMarket-Themeforest-Dark.png" alt="EnvatoMarket-Themeforest-Dark" width={427} height={82} />
+        <div className='w-1/4 flex justify-center'>
+          <Image src="/images/logos/EnvatoMarket-Themeforest-Dark.png" alt="EnvatoMarket-Themeforest-Dark" width={403} height={82} />
         </div>
       </div>
       <div className="container mx-auto p-4">
@@ -72,8 +72,13 @@ return (
               <h2 className="mt-2 text-sm md:text-lg lg:text-xl md:mt-0 bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[2rem] truncate ...">{item.item}</h2>
               <img className="w-full object-cover py-2" alt={item.user} src={item.live_preview_url} />
               <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">{item.user} - sales: {item.sales}</p>
-              <div className="flex bottom-4 right-4 w-1/3 justify-end mt-2">
-                <Image src="/images/logos/EnvatoMarket-Themeforest-Dark.png" alt="Logo-EnvatoMarket-Themeforest-Dark" width={427} height={82} />
+              <div className='flex justify-center'>
+                <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
+                  <Image src="/images/logos/EnvatoMarket-Themeforest-Dark.png" alt="Logo-EnvatoMarket-Themeforest-Dark" width={403} height={82} />
+                </div>
+                <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
+                <MiniButton size={'text-xs md:text-xs lg:text-lg'} fullWidth={false}>More info</MiniButton>
+                </div>
               </div>
             </div>
           </Link>

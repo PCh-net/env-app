@@ -60,37 +60,37 @@ export default function TemporaryDrawer() {
           <Divider />
           <List>
             <ListItem disablePadding>
-              <ListItemButton href='/'>
+              <ListItemButton href='/' className='text-lime-900'>
                 <ListItemIcon><NavigateNextIcon /></ListItemIcon>Home page
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton href='/themeforest'>
+              <ListItemButton href='/themeforest' className='text-lime-800'>
                 <ListItemIcon><NavigateNextIcon /></ListItemIcon>Themeforest
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton href='/codecanyon'>
+              <ListItemButton href='/codecanyon' className='text-lime-800'>
                 <ListItemIcon><NavigateNextIcon /></ListItemIcon>Codecanyon
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton href='/graphicriver'>
+              <ListItemButton href='/graphicriver' className='text-lime-800'>
                 <ListItemIcon><NavigateNextIcon /></ListItemIcon>Graphicriver
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton href='/photodune'>
+              <ListItemButton href='/photodune' className='text-lime-800'>
                 <ListItemIcon><NavigateNextIcon /></ListItemIcon>Photodune
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton href='/videohive'>
+              <ListItemButton href='/videohive' className='text-lime-800'>
                 <ListItemIcon><NavigateNextIcon /></ListItemIcon>Videohive
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton href='/audiojungle'>
+              <ListItemButton href='/audiojungle' className='text-lime-800'>
                 <ListItemIcon><NavigateNextIcon /></ListItemIcon>AudioJungle
               </ListItemButton>
             </ListItem>
