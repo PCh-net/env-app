@@ -2,7 +2,7 @@ import React from 'react';
 import EnvatoGrid from './components/EnvatoGrid';
 import 'tailwindcss/tailwind.css';
 import NavBar from './components/NavBar';
-import LinkTextLight from './components/LinkTextLight'
+import Footer from './components/Footer';
 import Image from 'next/image'
 
 export default function Home() {
@@ -25,6 +25,7 @@ export default function Home() {
       <div className="container mx-auto p-4">
         <EnvatoGrid />
       </div>
+      <Footer/>
     </main>
   );
 }

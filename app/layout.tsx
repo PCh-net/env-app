@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 const russo_one = Russo_One({ weight: ['400'],subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Env-app",
-  description: "Next.js app by PCh",
+  title: "Find Your style in Envato Market",
+  description: "Explore a collection of top-quality assets",
 };
 
 export default function RootLayout({

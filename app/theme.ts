@@ -11,10 +11,10 @@ const theme = createTheme({
       styleOverrides: `
       body {
         background: radial-gradient(ellipse at top, ${lime200}, ${lime500}, ${lime700});
-        background-repeat: no-repeat; /* Zapobiega powtarzaniu się tła */
-        background-attachment: fixed; /* Opcjonalnie, sprawia że tło jest nieruchome przy przewijaniu */
-        background-size: cover; /* Zapewnia, że tło pokrywa całą dostępną przestrzeń */
-        min-height: 100vh; /* Ustawia minimalną wysokość na 100% wysokości okna przeglądarki */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 100vh;
       }
       `,
     },
