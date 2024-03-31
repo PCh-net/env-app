@@ -75,8 +75,7 @@ return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
         {items.length > 0 ? (
           items.map((item, index) => (
-          <Link key={index} href={`/audiojungle/${item.id}`}>
-            <div className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
+            <div key={index} className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
               <div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={item.item} src={item.thumbnail} /></div>
               <h2 className="mt-2 text-sm md:text-md lg:text-xl md:mt-0 bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-3 text-ellipsis min-h-[3rem]">{item.item}</h2>
               {item.preview_url ? (
@@ -98,11 +97,10 @@ return (
                   <Image src="/images/logos/EnvatoMarket-Audiojungle-Dark.png" alt="EnvatoMarket-Audiojungle-Dark" width={397} height={82} />
                 </div>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
-                <MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false}>More info</MiniButton>
+                <Link key={index} href={`/audiojungle/${item.id}`}><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false}>More info</MiniButton></Link>
                 </div>
               </div>
             </div>
-          </Link>
           ))
         ) : (
           <img className='w-20 h-20' src="/images/loading-gif-loading.gif" alt="loading-gif-loading" />

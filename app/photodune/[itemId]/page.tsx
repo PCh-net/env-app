@@ -135,7 +135,7 @@ useEffect(() => {
     .catch(error => console.error("Failed to fetch item details:", error));
 }, [itemId]);
 
-console.log(item)
+
   return (
     <main className="container mx-auto p-4">
       <NavBar />

@@ -1,8 +1,7 @@
-// src/componetns/Footer.tsx
-
 import React, { FC, ReactElement } from "react";
 import Image from 'next/image'
-
+import Link from "next/link";
+import LinkText from "./LinkText";
 
 export const Footer: FC = (): ReactElement => {
   return (
@@ -12,9 +11,7 @@ export const Footer: FC = (): ReactElement => {
           <Image src="/images/logos/EnvatoMarket-Logo-Trans-Black.png" alt="EnvatoMarket-Logo-Trans-Black" width={689} height={82} />
         </div>
         <div className="w-4/4 md:w-3/4 lg:w-3/4 text-xs md:text-lg flex justify-end">
-          <p className="text-sm text-lime-700 sm:text-center dark:text-lime-400 mt-4 md:mt-2 lg:mt-2">
-            PCh {" "}{`${new Date().getFullYear()} | Next.js | Type Script | Tailwind`}
-          </p>
+          <span className="text-xs md:text-xs lg:text-xs sm:hidden md:visible lg:visible"> | <LinkText to={"/"} fontSize='text-xs md:text-xs lg:text-xs'>Home</LinkText> | <LinkText to={"/"} fontSize='text-xs md:text-xs lg:text-xs'>Type Script</LinkText> | <LinkText to={"/"} fontSize='text-xs md:text-xs lg:text-xs'>Tailwind</LinkText></span>
         </div>
       </div>
 
