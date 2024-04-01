@@ -10,8 +10,8 @@ export const Footer: FC = (): ReactElement => {
         <div className="w-4/4 md:w-1/4 lg:w-1/4">
           <Image src="/images/logos/EnvatoMarket-Logo-Trans-Black.png" alt="EnvatoMarket-Logo-Trans-Black" width={689} height={82} />
         </div>
-        <div className="w-4/4 md:w-3/4 lg:w-3/4 text-xs md:text-lg flex justify-end">
-          <span className="text-xs md:text-xs lg:text-xs sm:hidden md:visible lg:visible"> | <LinkText to={"/"} fontSize='text-xs md:text-xs lg:text-xs'>Home</LinkText> | <LinkText to={"/"} fontSize='text-xs md:text-xs lg:text-xs'>Type Script</LinkText> | <LinkText to={"/"} fontSize='text-xs md:text-xs lg:text-xs'>Tailwind</LinkText></span>
+        <div className="w-4/4 md:w-3/4 lg:w-3/4 text-xs md:text-lg flex justify-end text-lime-800">
+          <span className="text-xs md:text-xs lg:text-xs invisible md:visible lg:visible">Next.js | Type Script | Tailwind | 2024 by PCh</span>
         </div>
       </div>
 

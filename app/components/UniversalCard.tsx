@@ -27,7 +27,6 @@ const UniversalCard: React.FC<UniversalCardProps> = ({
           </div>
 
           <div className="p-2 flex justify-center relative">
-            {/* <Image src={`/images/logos/${altText}.png`} alt={altText} width={393} height={82} unoptimized={true} priority /> */}
             <img className="w-full object-cover" alt={altText} src={`/images/logos/${altText}.png`} />
           </div>
 

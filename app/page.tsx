@@ -3,6 +3,7 @@ import EnvatoGrid from './components/EnvatoGrid';
 import 'tailwindcss/tailwind.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import RandGrid from './components/RandGrid';
 import Image from 'next/image'
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       <div className="container mx-auto p-4">
         <EnvatoGrid />
       </div>
+      <RandGrid/>
       <Footer/>
     </main>
   );

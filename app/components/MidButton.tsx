@@ -13,7 +13,7 @@ const MidButton = ({ size = 'text-xl', fullWidth = false, ...props }) => {
     rounded-xl
     shadow-lg
     shadow-lime-400/80
-    rounde d-lg
+    rounded-lg
     px-3.5
     py-1.5
     text-center
