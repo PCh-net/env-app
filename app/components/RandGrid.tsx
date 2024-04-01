@@ -6,7 +6,7 @@ import Link from 'next/link'
 import 'tailwindcss/tailwind.css';
 import MiniButton from '../components/MiniButton';
 import SiteLogo from '../components/SiteLogo';
-
+import MidButton from './MidButton';
 
 interface Item {
   id: string;
@@ -41,7 +41,6 @@ const RandGrid = () => {
   }, []);
 
 
-console.log(items)
 
   return (
       <div className="container mx-auto p-4">

@@ -1,4 +1,6 @@
 import React from 'react';
+import { OpenInNew } from '@mui/icons-material';
+import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
 
 interface SeparatorProps {
   title: string;

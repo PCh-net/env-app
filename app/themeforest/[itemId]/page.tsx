@@ -14,6 +14,7 @@ import { OpenInNew } from '@mui/icons-material';
 import Separator from '../../components/Separator';
 import Footer from '../../components/Footer';
 
+
 interface ApiResponse {
   productDetails: EnvatoItem;
   similarProducts: {
@@ -203,7 +204,7 @@ useEffect(() => {
 
           <div className='flex flex-col md:flex-row lg:flex-row mt-2'>
             <div className="w-4/4 md:w-2/4 lg:w-2/4 p-4">
-              <img className="w-full object-cover" alt='EnvatoMarket-Logo-Trans-Black' src="/images/logos/EnvatoMarket-Logo-Trans-Black.png" />
+              <img className="w-full object-cover invisible md:visible lg:visible" alt='EnvatoMarket-Logo-Trans-Black' src="/images/logos/EnvatoMarket-Logo-Trans-Black.png" />
             </div>
             <div className='w-4/4 md:w-2/4 lg:w-2/4 p-4 flex justify-end align-bottom'>
               <LinkTextLight to={item.url} fontSize='text-xs md:text-xs lg:text-xs'>Preview Envato Market <OpenInNew className='text-xs md:text-xs lg:text-xs' /></LinkTextLight>
@@ -276,6 +277,8 @@ useEffect(() => {
         null
       )}
 
+
+
       {similarProducts.length > 0 ? (
       <Separator title="Similar items:" subtitle="Explore a collection of top-quality assets" />
       ) : (null)}
@@ -336,6 +339,7 @@ useEffect(() => {
             <div className="w-1/3 mt-2">
               <SiteLogo site={similarProduct.site} />
             </div>
+            
           </div>
           </Link>
         ))
