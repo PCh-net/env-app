@@ -97,7 +97,7 @@ return (
                   <Image src="/images/logos/EnvatoMarket-Audiojungle-Dark.png" alt="EnvatoMarket-Audiojungle-Dark" width={397} height={82} />
                 </div>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
-                <Link key={index} href={`/audiojungle/${item.id}`}><MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false}>More info</MiniButton></Link>
+                <Link key={index} href={`/audiojungle/${item.id}`}><MiniButton size={'text-xs md:text-xs lg:text-sm'} fullWidth={false}>More info</MiniButton></Link>
                 </div>
               </div>
             </div>

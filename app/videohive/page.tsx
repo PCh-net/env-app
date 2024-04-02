@@ -96,11 +96,11 @@ return (
               <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Author: {item.user} - sales: {item.sales}</p>
               <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Sales last week: {item.sales}</p>              
               <div className='flex flex-row md:flex-row lg:flex-row mt-2'>
-                <div className="bottom-4 right-4 w-1/3 justify-start m-2">
+                <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
                   <Image src="/images/logos/EnvatoMarket-Videohive-Dark.png" alt="EnvatoMarket-Videohive-Dark" width={427} height={82} />
                 </div>
-                <div className="bottom-4 right-4 w-2/3 justify-end m-2">
-                  <MidButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={true}>More info</MidButton>
+                <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
+                  <MidButton size={'text-xs md:text-xs lg:text-sm'} fullWidth={false}>More info</MidButton>
                 </div>
               </div>
             </div>

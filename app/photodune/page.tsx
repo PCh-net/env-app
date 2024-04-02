@@ -76,7 +76,7 @@ return (
                   <Image src="/images/logos/EnvatoMarket-Photodune-Dark.png" alt="EnvatoMarket-Photodune-Dark" width={372} height={82} />
                 </div>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
-                <MiniButton size={'text-xs md:text-xs lg:text-lg'} fullWidth={false}>More info</MiniButton>
+                <MiniButton size={'text-xs md:text-xs lg:text-sm'} fullWidth={false}>More info</MiniButton>
                 </div>
               </div>
             </div>

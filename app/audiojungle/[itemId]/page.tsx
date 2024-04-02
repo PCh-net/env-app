@@ -310,13 +310,6 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
           {similarProduct.previews.icon_with_audio_preview.icon_url &&<div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={similarProduct.name} src={similarProduct.previews.icon_with_audio_preview.icon_url} /></div>}
             <h2 className="text-lime-300 text-md md:text-md lg:text-lg md:mt-0 line-clamp-2 text-ellipsis min-h-[2rem]">{similarProduct.name}</h2>
             <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900 line-clamp-4 text-ellipsis min-h-[4rem] ...">{similarProduct.summary}</p>
-            {/* <>
-              {similarProduct.previews.landscape_preview?.landscape_url && <p>Value 1 OK</p>}
-              {similarProduct.previews.icon_with_video_preview?.icon_url && <p>Value 2 OK</p>}
-              {similarProduct.previews.icon_with_square_preview?.square_url && <p>Value 3 OK</p>}
-              {similarProduct.previews.thumbnail_preview?.large_url && <p>Value 4 OK</p>}
-              {similarProduct.previews.icon_with_thumbnail_preview?.icon_url && <p>Value 5 OK ??</p>}
-            </> */}
 
             {/* --- */}
               {similarProduct.previews.landscape_preview?.landscape_url && !similarProduct.previews.icon_with_video_preview?.video_url  ? (
@@ -356,12 +349,6 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
               Your browser does not support the audio.
             </audio>
               )  : (null)}  
-
-              {/* <p>ORG:{similarProduct.previews.landscape_preview?.landscape_url}</p>
-              <p>SQUERE:{similarProduct.previews.icon_with_square_preview?.square_url}</p>
-              <p>SMALL URL:{similarProduct.previews.thumbnail_preview?.small_url}</p>
-              <p>Video:{similarProduct.previews.icon_with_video_preview?.video_url}</p>
-              <p>Audio:{similarProduct.previews.icon_with_audio_preview.mp3_url}</p> */}
 
             {/* --- */}
             <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Author: {item?.author_username}</p>

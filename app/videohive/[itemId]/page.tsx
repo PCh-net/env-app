@@ -327,11 +327,6 @@ useEffect(() => {
                 <img className="w-full object-cover py-2" alt={item?.author_username} src={similarProduct.previews.thumbnail_preview?.large_url} />
               )  : (null)}
 
-              {/* <p>ORG:{similarProduct.previews.landscape_preview?.landscape_url}</p>
-              <p>SQUERE:{similarProduct.previews.icon_with_square_preview?.square_url}</p>
-              <p>SMALL URL:{similarProduct.previews.thumbnail_preview?.small_url}</p>
-              <p>Video:{similarProduct.previews.icon_with_video_preview?.video_url}</p> */}
-
             {/* --- */}
             <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Author: {item?.author_username}</p>
             <div className='flex justify-center'>
