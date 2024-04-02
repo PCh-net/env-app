@@ -84,10 +84,11 @@ const EnvatoGrid: React.FC = () => {
         description="Tracks and sounds from our community of musicians and sound engineers"
       />
   </div>
-
-  <Separator title="Random new file" subtitle="Explore a collection of top-quality assets" />
-
-
+  {items.length > 0 ? (
+    <Separator title="Random new file" subtitle="Explore a collection of top-quality assets" />
+  ) : (
+    null
+  )}
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
     {items.length > 0 ? (
       items.slice(0, 10).map((item, index) => (

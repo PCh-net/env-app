@@ -1,12 +1,11 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import Image from 'next/image'
 import Link from 'next/link'
 import 'tailwindcss/tailwind.css';
 import MiniButton from '../components/MiniButton';
 import SiteLogo from '../components/SiteLogo';
-import MidButton from './MidButton';
+import Separator from '../components/Separator';
 
 interface Item {
   id: string;
@@ -44,6 +43,11 @@ const RandGrid = () => {
 
   return (
       <div className="container mx-auto p-4">
+        {items.length > 0 ? (
+          <Separator title={`Popular products: ${siteName}`} subtitle="Watch more" />
+        ) : (
+          null
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.length > 0 ? (
           items.slice(0, 12).map((item, index) => (
