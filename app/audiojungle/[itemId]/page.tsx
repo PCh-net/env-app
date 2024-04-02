@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link'
 import Image from 'next/image'
 import NavBar from '../../components/NavBar';
-import LinkText from '../../components/LinkText'
+import Separator from '../../components/Separator';
 import LinkTextLight from '../../components/LinkTextLight'
 import 'tailwindcss/tailwind.css';
 import Footer from '../../components/Footer';
@@ -140,6 +140,8 @@ useEffect(() => {
 }, [itemId]);
   
 
+console.log(item);
+
 const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
   if (playingAudioRef.current && playingAudioRef.current !== audioElement) {
     playingAudioRef.current.pause();
@@ -157,7 +159,7 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
           <div className='flex flex-col md:flex-row lg:flex-row'>
             <div className='w-4/4 md:w-2/4 p-2'>
               <h2 className="mt-2 text-xl md:text-xl lg:text-2xl md:mt-0 text-lime-900 line-clamp-3 text-ellipsis min-h-[3rem]">{item?.name}</h2>
-              <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900">
+              <p className="text-xs md:text-md lg:text-md mt-2 text-lime-900">
                 {item.description ? delTagHTMLandLinki(item.description) : ''}
               </p>
               <p className="text-xs md:text-md lg:text-md mt-2 text-lime-900">Author: {item?.author_username}</p>
@@ -190,7 +192,7 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
               )  : (null)}
 
               {item.previews.icon_with_audio_preview.mp3_url ? (
-              <audio controls className="w-full h-10 md:h-10 lg:h-10 rounded-lg border-4 border-lime-500" src={item.previews.icon_with_audio_preview.mp3_url}>
+              <audio controls className="w-full h-10 md:h-10 lg:h-10 rounded-lg" src={item.previews.icon_with_audio_preview.mp3_url}>
                 Your browser does not support the audio tag.
               </audio>
               )  : (null)}
@@ -293,7 +295,9 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
         null
       )}
 
-      {similarProducts.length > 0 ? (<h3 className='text-3xl md:text-3xl lg:text-4xl bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent'>Similar items:</h3>) : (null)}
+      {similarProducts.length > 0 ? (
+      <Separator title="Similar items:" subtitle="Explore a collection of top-quality assets" />
+      ) : (null)}
 
       {/* similarProducts START */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

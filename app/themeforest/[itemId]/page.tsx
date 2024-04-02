@@ -8,7 +8,7 @@ import NavBar from '../../components/NavBar';
 import LinkText from '../../components/LinkText'
 import LinkTextLight from '../../components/LinkTextLight'
 import 'tailwindcss/tailwind.css';
-import MidButton from '../../components/MidButton';
+import MiniButton from '../../components/MiniButton';
 import SiteLogo from '../../components/SiteLogo';
 import { OpenInNew } from '@mui/icons-material';
 import Separator from '../../components/Separator';
@@ -336,10 +336,17 @@ useEffect(() => {
 
             {/* --- */}
             <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Author: {item?.author_username}</p>
-            <div className="w-1/3 mt-2">
+            {/* <div className="w-1/3 mt-2">
               <SiteLogo site={similarProduct.site} />
-            </div>
-            
+            </div> */}
+              <div className='flex justify-center'>
+                <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
+                <SiteLogo site={similarProduct.site} />
+                </div>
+                <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
+                <MiniButton size={'text-xs md:text-xs lg:text-xs'} fullWidth={false}>More info</MiniButton>
+                </div>
+              </div>
           </div>
           </Link>
         ))

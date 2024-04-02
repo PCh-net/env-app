@@ -3,9 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link'
-import Image from 'next/image'
 import NavBar from '../../components/NavBar';
-import LinkText from '../../components/LinkText'
+import Separator from '../../components/Separator';
 import LinkTextLight from '../../components/LinkTextLight'
 import 'tailwindcss/tailwind.css';
 import Footer from '../../components/Footer';
@@ -275,7 +274,9 @@ useEffect(() => {
         null
       )}
 
-      {similarProducts.length > 0 ? (<h3 className='text-3xl md:text-3xl lg:text-4xl bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent'>Similar items:</h3>) : (null)}
+      {similarProducts.length > 0 ? (
+      <Separator title="Similar items:" subtitle="Explore a collection of top-quality assets" />
+      ) : (null)}
 
       {/* similarProducts START */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
