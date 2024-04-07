@@ -106,7 +106,7 @@ const CodecanyonDetail = () => {
     return descNoTagLink;
   }
 
-  function getSiteKey(site: string): 'themeforest' | 'videohive' | 'photodune' | 'codecanyon' | 'graphicriver' | null {
+  function getSiteKey(site: string): 'themeforest' | 'videohive' | 'photodune' | 'codecanyon' | 'graphicriver' | 'audiojungle' | null {
     if (site.includes("themeforest.net")) {
       return 'themeforest';
     } else if (site.includes("videohive.net")) {
@@ -117,6 +117,8 @@ const CodecanyonDetail = () => {
       return 'codecanyon';
     } else if (site.includes("graphicriver.net")) {
       return 'graphicriver';
+    } else if (site.includes("audiojungle.net")) {
+      return 'audiojungle';
     } else {
       return null;
     }

@@ -48,7 +48,7 @@ const PagePhotoDune = () => {
 
     fetchData();
   }, []);
-
+console.log(items);
 return (
     <main className="container mx-auto p-4">
       <NavBar/>
@@ -71,6 +71,21 @@ return (
               <div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={item.item} src={item.thumbnail} /></div>
               <h2 className="mt-2 text-sm md:text-md lg:text-xl md:mt-0 bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-3 text-ellipsis min-h-[3rem]">{item.item}</h2>
               <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">{item.user} - sales: {item.sales}</p>
+              <div className='flex justify-center items-center'>
+                <div className="relative w-[400px] h-[300px] overflow-hidden rounded-lg justify-center">
+                  <Image
+                    src={item.live_preview_url}
+                    alt={item.item}
+                    fill
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: 'top',
+                    }}
+                    unoptimized={true}
+                  />
+                </div>
+              </div>
+
               <div className='flex justify-center'>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
                   <Image src="/images/logos/EnvatoMarket-Photodune-Dark.png" alt="EnvatoMarket-Photodune-Dark" width={372} height={82} />
