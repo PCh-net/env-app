@@ -1,5 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+
+
+
+
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
     case 'GET':
@@ -11,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 }
 
 async function handleGetRequest(req: NextApiRequest, res: NextApiResponse) {
-  const sites = ['themeforest', 'graphicriver', 'codecanyon'];
+  const sites = ['themeforest', 'graphicriver', 'codecanyon', 'videohive'];
   const randomSite = sites[Math.floor(Math.random() * sites.length)];
   const apiUrl = `https://api.envato.com/v1/market/popular:${randomSite}.json`;
   

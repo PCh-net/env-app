@@ -48,7 +48,7 @@ const PagePhotoDune = () => {
 
     fetchData();
   }, []);
-console.log(items);
+
 return (
     <main className="container mx-auto p-4">
       <NavBar/>
