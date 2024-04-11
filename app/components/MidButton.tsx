@@ -17,7 +17,6 @@ const MidButton = ({ size = 'text-xl', fullWidth = false, ...props }) => {
     px-3.5
     py-1.5
     text-center
-    me-2
     mb-2
   `;
 

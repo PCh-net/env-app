@@ -93,7 +93,7 @@ return (
                   Your browser does not support the video tag.
               </video>
 
-              <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Author: {item.user} - sales: {item.sales}</p>
+              <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Author: {item.user}</p>
               <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Sales last week: {item.sales}</p>              
               <div className='flex flex-row md:flex-row lg:flex-row mt-2'>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">

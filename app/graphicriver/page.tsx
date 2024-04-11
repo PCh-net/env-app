@@ -70,7 +70,7 @@ return (
               <div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={item.item} src={item.thumbnail} /></div>
               <h2 className="mt-2 text-sm md:text-lg lg:text-xl md:mt-0 bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[2rem] truncate ...">{item.item}</h2>
               <div className='flex justify-center items-center'>
-                <div className="relative w-[280px] h-[300px] overflow-hidden rounded-lg justify-center">
+                <div className="relative w-[400px] h-[280px] overflow-hidden rounded-lg justify-center">
                   <Image
                     src={item.live_preview_url}
                     alt={item.item}
