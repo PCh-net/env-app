@@ -8,6 +8,7 @@ import 'tailwindcss/tailwind.css';
 import NavBar from '../components/NavBar';
 import MiniButton from '../components/MiniButton';
 import Footer from '../components/Footer';
+import ProgressBar from '../components/ProgressBar';
 
 interface Items {
   id: string;
@@ -45,7 +46,7 @@ const PageAudioJungle = () => {
 
       const data = await response.json();
 
-      setItems(data.popular.items_last_week);
+      setItems(data.popular.items_last_three_months);
     };
 
     fetchData();
@@ -65,7 +66,7 @@ return (
       <div className="flex items-center mt-6 mb-5 rounded-lg p-4 shadow-lg bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-lime-400 via-lime-500 to-lime-700">
         <div className='w-3/4'>
           <h2 className="text-2xl md:text-3xl lg:text-4xl bg-gradient-to-bl from-lime-600 via-lime-700 to-lime-800 bg-clip-text text-transparent">Popular items</h2>
-          <p className='text-md md:text-lg lg:text-lg mt-1 text-lime-300'>Last week</p>
+          <p className='text-md md:text-lg lg:text-lg mt-1 text-lime-300'>Last three months</p>
         </div>
         <div className='w-1/4 flex justify-center'>
           <Image src="/images/logos/EnvatoMarket-Audiojungle-Dark.png" alt="EnvatoMarket-Audiojungle-Dark" width={397} height={82} />
@@ -90,8 +91,11 @@ return (
                 Your browser does not support the audio.
               </audio>
               )  : (null)}  
-              
-              <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">{item.user} - sales: {item.sales}</p>
+              <p className="text-sm md:text-lg lg:text-lg mt-2 text-lime-200">Price: {item.cost} $</p>
+              <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Sales: {item.sales}</p>
+              {item.rating_decimal > 0 && (
+                <ProgressBar currentProgress={item.rating_decimal} maxProgress={5} />
+              )}
               <div className='flex justify-center'>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
                   <Image src="/images/logos/EnvatoMarket-Audiojungle-Dark.png" alt="EnvatoMarket-Audiojungle-Dark" width={397} height={82} />
