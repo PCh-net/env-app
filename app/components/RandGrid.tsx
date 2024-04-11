@@ -67,7 +67,7 @@ const RandGrid = () => {
           items.slice(0, 12).map((item, index) => (
             <div key={index} className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
               <div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={item.item} src={item.thumbnail} /></div>
-              <h2 className="mt-2 text-sm md:text-lg lg:text-xl md:mt-0 bg-gradient-to-tr from-lime-700 via-lime-900 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[2rem] ...">{item.item}</h2>
+              <h2 className="mt-2 text-sm md:text-lg lg:text-xl md:mt-0 bg-gradient-to-tr from-lime-700 via-lime-900 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[3rem]">{item.item}</h2>
               <div className='flex justify-center items-center'>
               {item.siteName === 'graphicriver' ? (
                 <div className="relative w-[400px] h-[300px] overflow-hidden rounded-lg justify-center">
@@ -89,7 +89,7 @@ const RandGrid = () => {
               ) : item.siteName === 'codecanyon' ? (
                 <Link href={`/${item.siteName}/${item.id}`}><img className="w-full object-cover transform hover:scale-90 transition-transform duration-200 hover:shadow-xl hover:shadow-lime-200/70" alt={item.user} src={item.live_preview_url} /></Link>
               ) : item.siteName === 'videohive' ? (
-                <video width="590" height="332" controls loop muted playsInline preload="none" poster={item.live_preview_url}>
+                <video width="590" height="332" controls loop playsInline preload="none" poster={item.live_preview_url}>
                 <source src={item.live_preview_video_url} type="video/mp4" />
                 <track
                   src={item.live_preview_video_url}
@@ -128,18 +128,18 @@ const RandGrid = () => {
         {/* BUTTON */}
         {items && (
         <div className="flex flex-col md:flex-row lg:flex-row mt-6 mb-5 w-full rounded-lg px-4 py-6 shadow-lg md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-lime-300 via-lime-400 to-lime-600">
-        <div className="w-4/4 md:w-1/4 lg:w-1/4 align-middle">
-          <SiteLogo site={`${siteName}.net`} />
+          <div className="w-4/4 md:w-1/4 lg:w-1/4 align-middle">
+            <SiteLogo site={`${siteName}.net`} />
+          </div>
+          <div className='w-4/4 md:w-2/4 lg:w-2/4'>
+          </div>
+          <div className="w-4/4 md:w-1/4 lg:w-1/4 flex flex-col items-end text-lime-800">
+            <MidButton size={'text-sm md:text-sm lg:text-sm'} fullWidth={true} onClick={toggleDiv}>
+              {isMore ? <KeyboardArrowUpIcon sx={{ color: green[100] }}/> : <KeyboardArrowDownIcon sx={{ color: green[100] }} />}
+              {isMore ? '  Hide' : '  Show more'}           
+            </MidButton>
+          </div>
         </div>
-        <div className='w-4/4 md:w-2/4 lg:w-2/4'>
-        </div>
-        <div className="w-4/4 md:w-1/4 lg:w-1/4 flex flex-col items-end text-lime-800">
-          <MidButton size={'text-sm md:text-sm lg:text-sm'} fullWidth={true} onClick={toggleDiv}>
-            {isMore ? <KeyboardArrowUpIcon sx={{ color: green[100] }}/> : <KeyboardArrowDownIcon sx={{ color: green[100] }} />}
-            {isMore ? '  Hide' : '  Show more'}           
-          </MidButton>
-        </div>
-      </div>
         )}
 
         {/* SHOW MORE */}
@@ -149,7 +149,7 @@ const RandGrid = () => {
           items.slice(12, 30).map((item, index) => (
             <div key={index} className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
               <div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={item.item} src={item.thumbnail} /></div>
-              <h2 className="mt-2 text-sm md:text-lg lg:text-xl md:mt-0 bg-gradient-to-tr from-lime-700 via-lime-900 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[2rem] ...">{item.item}</h2>
+              <h2 className="mt-2 text-sm md:text-lg lg:text-xl md:mt-0 bg-gradient-to-tr from-lime-700 via-lime-900 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[3rem] ...">{item.item}</h2>
               <div className='flex justify-center items-center'>
               {item.siteName === 'graphicriver' ? (
                 <div className="relative w-[400px] h-[300px] overflow-hidden rounded-lg justify-center">
@@ -171,7 +171,7 @@ const RandGrid = () => {
               ) : item.siteName === 'codecanyon' ? (
                 <Link href={`/${item.siteName}/${item.id}`}><img className="w-full object-cover transform hover:scale-90 transition-transform duration-200 hover:shadow-xl hover:shadow-lime-200/70" alt={item.user} src={item.live_preview_url} /></Link>
               ) : item.siteName === 'videohive' ? (
-                <video width="590" height="332" controls loop muted playsInline preload="none" poster={item.live_preview_url}>
+                <video width="590" height="332" controls loop playsInline preload="none" poster={item.live_preview_url}>
                 <source src={item.live_preview_video_url} type="video/mp4" />
                 <track
                   src={item.live_preview_video_url}
@@ -208,6 +208,10 @@ const RandGrid = () => {
         </div>
         )}
         {/* END */}
+        {/* BUTTONS START */}
+
+        {/* BUTTONS END */}       
+
       </div>
   );
 };
