@@ -85,7 +85,7 @@ async function fetchData() {
   if (!categoryPath) return;
   setIsLoading(true);
   try {
-    const url = `/api/envatoApiSearch?categoryName=${categoryPath}&page=${currentPage}`;
+    const url = `/api/envatoApiSearchCC?categoryName=${categoryPath}&page=${currentPage}`;
     const res = await fetch(url);
     if (!res.ok) {
       throw new Error(`API responded with status code ${res.status}`);
@@ -125,7 +125,7 @@ async function fetchData() {
           <p className='text-md md:text-lg lg:text-lg mt-1 text-lime-300'>Page: {currentPage}</p>
         </div>
         <div className='w-1/4 flex justify-center'>
-          <Image src="/images/logos/EnvatoMarket-Themeforest-Dark.png" alt="EnvatoMarket-Themeforest-Dark" width={403} height={82} />
+          <Image src="/images/logos/EnvatoMarket-Codecanyon-Dark.png" alt="EnvatoMarket-Codecanyon-Dark" width={403} height={82} />
         </div>
       </div>
 
@@ -164,7 +164,7 @@ async function fetchData() {
               <div key={index} className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
                 <div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={product.author_username} src={product.author_image} /></div>
                 <h2 className="mt-2 text-sm md:text-xl lg:text-2xl md:mt-0 bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[3rem]">{product.name}</h2>
-                <Link href={`/themeforest/${product.id}`}>
+                <Link href={`/codecanyon/${product.id}`}>
                 <img className="w-full object-cover transform hover:scale-90 transition-transform duration-200 hover:shadow-xl hover:shadow-lime-200/70" alt={product.author_username} src={product.previews.landscape_preview?.landscape_url} />
                 </Link>
                 <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800 line-clamp-3 text-ellipsis min-h-[3rem]">{product.description}</p>
@@ -183,10 +183,10 @@ async function fetchData() {
                 <p className="text-xs md:text-mxsd lg:text-xs mt-2 text-lime-800 line-clamp-2 text-ellipsis min-h-[3rem]">Tags: {product.tags.join(', ')}</p>
                 <div className='flex justify-center'>
                   <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
-                    <Image src="/images/logos/EnvatoMarket-Themeforest-Dark.png" alt="Logo-EnvatoMarket-Themeforest-Dark" width={403} height={82} />
+                    <Image src="/images/logos/EnvatoMarket-Codecanyon-Dark.png" alt="EnvatoMarket-Codecanyon-Dark" width={403} height={82} />
                   </div>
                   <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
-                  <Link href={`/themeforest/${product.id}`}>
+                  <Link href={`/codecanyon/${product.id}`}>
                     <MiniButton size={'text-xs md:text-xs lg:text-sm'} fullWidth={false}>More info</MiniButton>
                   </Link>
                   </div>
