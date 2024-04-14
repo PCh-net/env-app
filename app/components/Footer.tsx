@@ -2,6 +2,7 @@ import React, { FC, ReactElement } from "react";
 import Image from 'next/image'
 import Link from "next/link";
 import LinkText from "./LinkText";
+import MiniButton from '../components/MiniButton';
 
 export const Footer: FC = (): ReactElement => {
   return (
@@ -15,6 +16,7 @@ export const Footer: FC = (): ReactElement => {
         </div>
       </div>
     </footer>
+
   );
 };
 

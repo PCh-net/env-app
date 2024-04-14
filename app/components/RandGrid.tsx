@@ -85,7 +85,7 @@ const RandGrid = () => {
                   </Link>
                 </div>
               ) : item.siteName === 'themeforest' ? (
-                <Link href={`/${item.siteName}/${item.id}`}><img className="w-full object-cover transform hover:scale-90 transition-transform duration-200" alt={item.user} src={item.live_preview_url} /></Link>
+                <Link href={`/${item.siteName}/${item.id}`}><img className="w-full object-cover transform hover:scale-90 transition-transform duration-200 hover:shadow-xl hover:shadow-lime-200/70" alt={item.user} src={item.live_preview_url} /></Link>
               ) : item.siteName === 'codecanyon' ? (
                 <Link href={`/${item.siteName}/${item.id}`}><img className="w-full object-cover transform hover:scale-90 transition-transform duration-200 hover:shadow-xl hover:shadow-lime-200/70" alt={item.user} src={item.live_preview_url} /></Link>
               ) : item.siteName === 'videohive' ? (
@@ -105,9 +105,15 @@ const RandGrid = () => {
               </div>
               <p className="text-sm md:text-lg lg:text-lg mt-2 text-lime-800">Price: {item.cost} $</p>
               <p className="text-sm md:text-lg lg:text-lg mt-2 text-lime-800">Sales last week: {item.sales}</p>
-              {item.rating_decimal > 0 && (
-                <ProgressBar currentProgress={item.rating_decimal} maxProgress={5} />
-              )}
+              {
+                item.rating_decimal > 0 ? (
+                  <ProgressBar currentProgress={item.rating_decimal} maxProgress={5} />
+                ) : (
+                  <div className="h-4 md:h-4 lg:h-6 w-full relative my-2">
+                    
+                  </div>
+                )
+              }
               <div className='flex justify-center items-center'>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
                   <SiteLogo site={`${item.siteName}.net`} />
@@ -187,9 +193,15 @@ const RandGrid = () => {
               </div>
               <p className="text-sm md:text-lg lg:text-lg mt-2 text-lime-800">Price: {item.cost} $</p>
               <p className="text-sm md:text-lg lg:text-lg mt-2 text-lime-800">Sales last week: {item.sales}</p>
-              {item.rating_decimal > 0 && (
-                <ProgressBar currentProgress={item.rating_decimal} maxProgress={5} />
-              )}
+              {
+                item.rating_decimal > 0 ? (
+                  <ProgressBar currentProgress={item.rating_decimal} maxProgress={5} />
+                ) : (
+                  <div className="h-4 md:h-4 lg:h-6 w-full relative my-2">
+                    
+                  </div>
+                )
+              }
               <div className='flex justify-center items-center'>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
                   <SiteLogo site={`${item.siteName}.net`} />

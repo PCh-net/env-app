@@ -25,11 +25,9 @@ const UniversalCard: React.FC<UniversalCardProps> = ({
           <div className="-mt-16 flex justify-center md:justify-end">
             <img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={altText} src={imageSrc} />
           </div>
-
           <div className="p-2 flex justify-center relative">
             <img className="w-full object-cover" alt={altText} src={`/images/logos/${altText}.png`} />
           </div>
-
           <h2 className="mt-2 text-md md:text-lg lg:text-lg md:mt-0 text-lime-900">{title}</h2>
           <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">{description}</p>
         </div>

@@ -94,6 +94,27 @@ export default function TemporaryDrawer() {
                 <ListItemIcon><NavigateNextIcon /></ListItemIcon>AudioJungle
               </ListItemButton>
             </ListItem>
+            <Divider />
+            <ListItem disablePadding>
+              <ListItemButton href='/themeforest/category/wordpress' className='text-lime-700'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>Wordpress
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton href='/themeforest/category/wordpress/ecommerce/woocommerce' className='text-lime-700'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>Woocommerce
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton href='/themeforest/category/ecommerce/prestashop' className='text-lime-700'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>Prestashop
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton href='/themeforest/category/ecommerce/magento' className='text-lime-700'>
+                <ListItemIcon><NavigateNextIcon /></ListItemIcon>Magento
+              </ListItemButton>
+            </ListItem>
             <img className="w-full object-cover p-6" alt='EnvatoMarket-Logo-Trans-Black' src="/images/logos/EnvatoMarket-Logo-Trans-Black.png" />
           </List>
         </Box>

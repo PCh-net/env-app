@@ -69,27 +69,26 @@ return (
             <div key={index} className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
               <div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={item.item} src={item.thumbnail} /></div>
               <h2 className="mt-2 text-sm md:text-lg lg:text-xl md:mt-0 bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[2rem] truncate ...">{item.item}</h2>
+              
               <div className='flex justify-center items-center'>
-                <div className="relative w-[400px] h-[280px] overflow-hidden rounded-lg justify-center">
+                <div className="w-[400px] h-[280px] overflow-hidden relative rounded-lg">
                 <Link href={`/graphicriver/${item.id}`}>
-                  <Image
-                    src={item.live_preview_url}
-                    alt={item.item}
-                    fill
-                    style={{
-                      objectFit: 'cover',
-                      objectPosition: 'top',
-                    }}
-                    unoptimized={true}
-                  />
-                </Link>
+                  <img src={item.live_preview_url} alt={item.item} className="w-full h-full object-cover object-top"/>
+                  </Link>
                 </div>
               </div>
+
               <p className="text-sm md:text-lg lg:text-lg mt-2 text-lime-200">Price: {item.cost} $</p>
               <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Sales: {item.sales}</p>
-              {item.rating_decimal > 0 && (
-                <ProgressBar currentProgress={item.rating_decimal} maxProgress={5} />
-              )}
+              {
+                item.rating_decimal > 0 ? (
+                  <ProgressBar currentProgress={item.rating_decimal} maxProgress={5} />
+                ) : (
+                  <div className="h-4 md:h-4 lg:h-6 w-full relative my-2">
+                    
+                  </div>
+                )
+              }
               <div className='flex justify-center'>
                 <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
                   <Image src="/images/logos/EnvatoMarket-Graphicriver-Dark.png" alt="EnvatoMarket-Graphicriver-Dark" width={325} height={82} />

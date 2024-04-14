@@ -331,6 +331,23 @@ useEffect(() => {
                 <img className="w-full object-cover py-2" alt={item?.author_username} src={similarProduct.previews.thumbnail_preview?.large_url} />
               )  : (null)}
 
+              {similarProduct.previews.icon_with_square_preview?.square_url ? (
+                <div className='flex justify-center items-center'>
+                  <div className="relative w-[280px] h-[300px] overflow-hidden rounded-lg justify-center">
+                    <Image
+                      src={similarProduct.previews.icon_with_square_preview?.square_url}
+                      alt={similarProduct.author_username}
+                      fill
+                      style={{
+                        objectFit: 'cover',
+                        objectPosition: 'top',
+                      }}
+                      unoptimized={true}
+                    />
+                  </div>
+                </div>
+              )  : (null)}
+
               {/* <p>ORG:{similarProduct.previews.landscape_preview?.landscape_url}</p>
               <p>SQUERE:{similarProduct.previews.icon_with_square_preview?.square_url}</p>
               <p>SMALL URL:{similarProduct.previews.thumbnail_preview?.small_url}</p>
