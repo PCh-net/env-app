@@ -9,6 +9,9 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import MidButton from '../components/MidButton';
 import ProgressBar from '../components/ProgressBar';
+import Separator from '../components/Separator';
+import { categories as categoriesVS } from '../data/categoriesVS';
+import AccordionItem from '../components/AccordionItem';
 
 interface Items {
   id: string;
@@ -111,6 +114,10 @@ return (
         ) : (
           <img className='w-20 h-20' src="/images/loading-gif-loading.gif" alt="loading-gif-loading" />
         )}
+        </div>
+        <Separator title={`All category Videohive: `} subtitle="Watch more" />
+        <div className="mt-12 mb-5 w-12/12 rounded-lg bg-gray-50 px-4 py-2 shadow-lg md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
+          <AccordionItem categories={categoriesVS} baseUrl="videohive" />
         </div>
       </div>
       <Footer/>
