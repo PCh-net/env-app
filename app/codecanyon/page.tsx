@@ -9,6 +9,9 @@ import NavBar from '../components/NavBar';
 import MiniButton from '../components/MiniButton';
 import Footer from '../components/Footer';
 import ProgressBar from '../components/ProgressBar';
+import Separator from '../components/Separator';
+import { categories as categoriesTF } from '../data/categoriesCC';
+import AccordionItem from '../components/AccordionItem';
 
 interface Items {
   id: string;
@@ -69,7 +72,7 @@ return (
           items.map((item, index) => (
             <div key={index} className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
               <div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={item.item} src={item.thumbnail} /></div>
-              <h2 className="mt-2 text-sm md:text-md lg:text-xl md:mt-0 bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[3rem]">{item.item}</h2>
+              <h2 className="mt-2 text-sm md:text-md lg:text-xl md:mt-0 bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[2rem]">{item.item}</h2>
               <Link href={`/codecanyon/${item.id}`}>
                 <img className="w-full object-cover py-2" alt={item.user} src={item.live_preview_url} />
               </Link>
@@ -93,6 +96,10 @@ return (
         ) : (
           <img className='w-20 h-20' src="/images/loading-gif-loading.gif" alt="loading-gif-loading" />
         )}
+        </div>
+        <Separator title={`All category Codecanyon: `} subtitle="Watch more" />
+        <div className="mt-12 mb-5 w-12/12 rounded-lg bg-gray-50 px-4 py-2 shadow-lg md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
+          <AccordionItem categories={categoriesTF} baseUrl="codecanyon" />
         </div>
       </div>
       <Footer/>

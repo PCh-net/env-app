@@ -13,6 +13,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import Stack from '@mui/material/Stack';
 import LinearProgress from '@mui/material/LinearProgress';
+import SeparatorButton from '../../../components/SeparatorButton';
 
 interface ProductDetails {
   id: string;
@@ -60,8 +61,9 @@ const CategoryPage: React.FC = () => {
   const [products, setProducts] = useState<ProductDetails[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState<number>(10);
+  const [pageSize, setPageSize] = useState<number>(12);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [totalHits, setTotalHits] = useState<number>(0);
 
   const params = useParams();
   
@@ -90,8 +92,16 @@ async function fetchData() {
     if (!res.ok) {
       throw new Error(`API responded with status code ${res.status}`);
     }
+    
     const data = await res.json();
+
+    if (data.message) {
+      setIsLoading(false);
+    }
+  
     setProducts(data.productDetails.matches);
+    setTotalHits(data.productDetails.total_hits);
+
   } catch (err: any) {
     setError(err.message || 'An unknown error occurred');
   } finally {
@@ -123,6 +133,7 @@ async function fetchData() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl bg-gradient-to-bl from-lime-600 via-lime-700 to-lime-800 bg-clip-text text-transparent">Category:</h2>
           <p className='text-md md:text-lg lg:text-lg mt-1 text-lime-300'>{categoryPath ? replaceSlashes(categoryPath) : ''}</p>
           <p className='text-md md:text-lg lg:text-lg mt-1 text-lime-300'>Page: {currentPage}</p>
+          <p className='text-md md:text-lg lg:text-lg mt-1 text-lime-300'>Total hits: {totalHits}</p>
         </div>
         <div className='w-1/4 flex justify-center'>
           <Image src="/images/logos/EnvatoMarket-Themeforest-Dark.png" alt="EnvatoMarket-Themeforest-Dark" width={403} height={82} />
@@ -148,10 +159,26 @@ async function fetchData() {
         {products.length > 0 ? (
           <div className='flex justify-center py-4'>
             <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-start mt-2">
-            <MidButton size={'text-xs md:text-xs lg:text-xl'} fullWidth={true} onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}><KeyboardArrowLeftIcon className='text-xs md:text-xs lg:text-xl mr-2' />Previous page</MidButton>
+              <MidButton
+                size={'text-xs md:text-xs lg:text-xl'}
+                fullWidth={true}
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage <= 1}
+              >
+                {currentPage <= 1 ? (null) : (<KeyboardArrowLeftIcon className='text-xs md:text-xs lg:text-xl mr-2' /> )}
+                {currentPage <= 1 ? (`This is first page`) : (`Previous page`)}
+              </MidButton>
             </div>
             <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
-              <MidButton size={'text-xs md:text-xs lg:text-xl'} fullWidth={true} onClick={() => setCurrentPage(prev => prev + 1)}>Next page<KeyboardArrowRightIcon className='text-xs md:text-xs lg:text-xl ml-2' /></MidButton>
+              <MidButton
+                size={'text-xs md:text-xs lg:text-xl'}
+                fullWidth={true}
+                onClick={() => setCurrentPage(prev => prev + 1)}
+                disabled={currentPage * pageSize >= totalHits}
+              >
+              {currentPage * pageSize >= totalHits ? (`This is last page`) : (`Next page`)}
+              {currentPage * pageSize >= totalHits ? (null) : (<KeyboardArrowRightIcon className='text-xs md:text-xs lg:text-xl ml-2' />)}
+              </MidButton>
             </div>
           </div>
         ) : (
@@ -164,9 +191,24 @@ async function fetchData() {
               <div key={index} className="mt-12 mb-5 w-12/12 transform rounded-lg bg-gray-50 px-4 py-2 shadow-lg duration-300 hover:scale-105 md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
                 <div className="-mt-16 flex justify-center md:justify-end"><img className="h-20 w-20 rounded-full border-8 border-white border-opacity-40 object-cover" alt={product.author_username} src={product.author_image} /></div>
                 <h2 className="mt-2 text-sm md:text-xl lg:text-2xl md:mt-0 bg-gradient-to-tl from-lime-600 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[3rem]">{product.name}</h2>
-                <Link href={`/themeforest/${product.id}`}>
+
+                {product.previews.landscape_preview?.landscape_url ? (
+                <Link href={`/codecanyon/${product.id}`}>
                 <img className="w-full object-cover transform hover:scale-90 transition-transform duration-200 hover:shadow-xl hover:shadow-lime-200/70" alt={product.author_username} src={product.previews.landscape_preview?.landscape_url} />
                 </Link>
+                ) : (
+                  <video width="590" height="332" controls autoPlay loop muted playsInline preload="none">
+                  <source src={product.previews.icon_with_video_preview?.video_url} type="video/mp4" />
+                  <track
+                    src={product.previews.icon_with_video_preview?.video_url}
+                    kind="subtitles"
+                    srcLang="en"
+                    label="English"
+                      />
+                    Your browser does not support the video tag.
+                  </video>
+                )}
+
                 <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800 line-clamp-3 text-ellipsis min-h-[3rem]">{product.description}</p>
                 <p className="text-sm md:text-lg lg:text-lg mt-2 text-lime-200">Price: {convertCentsToDollars(product.price_cents)}</p>
                 <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">Sales: {product.number_of_sales}</p>
@@ -194,7 +236,7 @@ async function fetchData() {
               </div>
             ))
           ) : (
-            <img className='w-20 h-20' src="/images/loading-gif-loading.gif" alt="loading-gif-loading" />
+            null
           )}
           </div>
           {products.length > 0 ? (
@@ -207,8 +249,10 @@ async function fetchData() {
                 setCurrentPage(prev => Math.max(prev - 1, 1));
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
+              disabled={currentPage <= 1}
             >
-              <KeyboardArrowLeftIcon className='text-xs md:text-xs lg:text-xl mr-2' />Previous page
+            {currentPage <= 1 ? (null) : (<KeyboardArrowLeftIcon className='text-xs md:text-xs lg:text-xl mr-2' /> )}
+            {currentPage <= 1 ? (`This is first page`) : (`Previous page`)}
             </MidButton>
             </div>
             <div className="flex bottom-4 right-4 w-2/4 md:w-2/4 lg:w-2/4 justify-end mt-2">
@@ -219,14 +263,17 @@ async function fetchData() {
                 setCurrentPage(prev => prev + 1);
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
+              disabled={currentPage * pageSize >= totalHits}
             >
-              Next page<KeyboardArrowRightIcon className='text-xs md:text-xs lg:text-xl ml-2' />
+              {currentPage * pageSize >= totalHits ? (`This is last page`) : (`Next page`)}
+              {currentPage * pageSize >= totalHits ? (null) : (<KeyboardArrowRightIcon className='text-xs md:text-xs lg:text-xl ml-2' />)}
             </MidButton>
             </div>
           </div>
           ) : (
             null
           )}
+          <SeparatorButton title={`Themeforest category: ${categoryPath ? replaceSlashes(categoryPath) : ''}`} subtitle={`Page: ${currentPage}`} path={`/themeforest`} />
         </div>
       <Footer/>
     </main>

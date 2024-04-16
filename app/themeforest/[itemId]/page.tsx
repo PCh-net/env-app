@@ -104,9 +104,13 @@ const ThemeForestDetail = () => {
 
   function delTagHTMLandLinki(desc: string): string {
     const descNoTag = desc.replace(/<\/?[^>]+(>|$)/g, "");
-    const descNoTagLink = descNoTag.replace(/http[s]?:\/\/[^\s]+[\s]?/g, "");
-    return descNoTagLink;
+    const descNoTagLinks = descNoTag.replace(/http[s]?:\/\/[^\s]+[\s]?/g, "");
+    const descNoEntities = descNoTagLinks.replace(/&[#]?[a-zA-Z0-9]+;/g, "");
+    return descNoEntities;
   }
+
+
+
 
   function getSiteKey(site: string): 'themeforest' | 'videohive' | 'photodune' | 'codecanyon' | 'graphicriver' | 'audiojungle' | null {
     if (site.includes("themeforest.net")) {
@@ -151,6 +155,9 @@ useEffect(() => {
               <h2 className="mt-2 text-xl md:text-xl lg:text-2xl md:mt-0 text-lime-900 line-clamp-3 text-ellipsis min-h-[3rem]">{item?.name}</h2>
               <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900">
                 {item.wordpress_theme_metadata?.description ? delTagHTMLandLinki(item.wordpress_theme_metadata.description) : ''}
+              </p>
+              <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900">
+                {delTagHTMLandLinki(item.description)}
               </p>
               <p className="text-xs md:text-md lg:text-md mt-2 text-lime-900">Author: {item?.author_username}</p>
               <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900">ID: {item?.id}</p>

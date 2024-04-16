@@ -6,7 +6,7 @@ export default async function handler(
 ) {
   const { categoryName, page, pageSize } = req.query;
 
-  const productDetailsUrl = `https://api.envato.com/v1/discovery/search/search/item?category=${categoryName}&page=${page}&page_size=12&site=themeforest.net&sort_by=trending`;
+  const productDetailsUrl = `https://api.envato.com/v1/discovery/search/search/item?category=${categoryName}&page=${page}&page_size=${pageSize || 12}&site=themeforest.net&sort_by=trending`;
 
   try {
     const productResponse = await fetch(productDetailsUrl, {
@@ -20,6 +20,10 @@ export default async function handler(
     }
     
     const productData = await productResponse.json();
+    if (productData && productData.matches && productData.matches.length === 0) {
+      return res.status(200).json({ productDetails: productData, message: "No data available for the given criteria." });
+    }
+    
     res.status(200).json({ productDetails: productData });
   } catch (error) {
     if (error instanceof Error) {

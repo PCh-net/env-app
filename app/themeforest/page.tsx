@@ -9,6 +9,9 @@ import NavBar from '../components/NavBar';
 import MiniButton from '../components/MiniButton';
 import Footer from '../components/Footer';
 import ProgressBar from '../components/ProgressBar';
+import Separator from '../components/Separator';
+import { categories as categoriesTF } from '../data/categoriesTF';
+import AccordionItem from '../components/AccordionItem';
 
 interface Items {
   id: string;
@@ -27,6 +30,8 @@ interface Items {
 
 const PageThemeforest = () => {
   const [items, setItems] = useState<Items[]>([]);
+  const [isAccOpen, setAccIsOpen] = useState(false);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,7 +50,7 @@ const PageThemeforest = () => {
       const data = await response.json();
 
       setItems(data.popular.popular.items_last_three_months);
-// console.log(data);
+
     };
 
     fetchData();
@@ -95,6 +100,10 @@ return (
         ) : (
           <img className='w-20 h-20' src="/images/loading-gif-loading.gif" alt="loading-gif-loading" />
         )}
+        </div>
+          <Separator title={`All category Themeforest: `} subtitle="Watch more" />
+        <div className="mt-12 mb-5 w-12/12 rounded-lg bg-gray-50 px-4 py-2 shadow-lg md:px-8 md:py-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-lime-200 via-lime-500 to-lime-700">
+          <AccordionItem categories={categoriesTF} baseUrl="themeforest" />
         </div>
       </div>
       <Footer/>

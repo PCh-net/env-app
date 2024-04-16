@@ -153,7 +153,7 @@ const EnvatoGrid: React.FC = () => {
             <h3 className="mt-4 text-md md:text-2xl lg:text-2xl md:mt-0 bg-gradient-to-tl from-lime-900 via-lime-700 to-lime-900 bg-clip-text text-transparent line-clamp-2 text-ellipsis min-h-[3rem] ...">{item.item}</h3>
             <p className="text-sm md:text-lg lg:text-lg mt-2 text-lime-200">Price: {item.cost} $</p>
             <p className="text-sm md:text-md lg:text-md mt-2 text-lime-800">{item.user}</p>
-            <div className="flex bottom-4 right-4 w-3/3 md:w-3/3 lg:w-1/3 justify-end mt-2">
+            <div className="flex bottom-4 right-4 w-3/3 md:w-3/3 lg:w-3/3 justify-end mt-2">
             <Link key={index} href={`/themeforest/${item.id}`}>
               <MiniButton size={'text-xs md:text-xs lg:text-sm'} fullWidth={true}>More info</MiniButton>
             </Link>
