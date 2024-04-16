@@ -197,7 +197,7 @@ async function fetchData() {
                 <img className="w-full object-cover transform hover:scale-90 transition-transform duration-200 hover:shadow-xl hover:shadow-lime-200/70" alt={product.author_username} src={product.previews.landscape_preview?.landscape_url} />
                 </Link>
                 ) : (
-                  <video width="590" height="332" controls autoPlay loop muted playsInline preload="none">
+                  <video key={product.previews.icon_with_video_preview?.video_url} width="590" height="332" controls autoPlay loop muted playsInline preload="none" poster={product.previews.icon_with_video_preview?.landscape_url}>
                   <source src={product.previews.icon_with_video_preview?.video_url} type="video/mp4" />
                   <track
                     src={product.previews.icon_with_video_preview?.video_url}
