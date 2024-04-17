@@ -182,7 +182,7 @@ async function fetchData() {
 
                 {product.previews.landscape_preview?.landscape_url ? (
                 <Link href={`/codecanyon/${product.id}`}>
-                <img className="w-full object-cover transform hover:scale-90 transition-transform duration-200 hover:shadow-xl hover:shadow-lime-200/70" alt={product.author_username} src={product.previews.landscape_preview?.landscape_url} />
+                <img key={index} className="w-full object-cover transform hover:scale-90 transition-transform duration-200 hover:shadow-xl hover:shadow-lime-200/70" alt={product.author_username} src={product.previews.landscape_preview?.landscape_url} />
                 </Link>
                 ) : (
                   <video width="590" height="332" controls autoPlay loop muted playsInline preload="none">
