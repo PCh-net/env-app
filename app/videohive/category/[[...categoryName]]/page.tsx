@@ -106,8 +106,6 @@ async function fetchData() {
     fetchData();
   }, [categoryPath, currentPage, pageSize]);
 
-console.log(products);
-
   if (error) {
     return <div>Error: {error}</div>;
   }
