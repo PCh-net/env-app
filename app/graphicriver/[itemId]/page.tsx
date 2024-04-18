@@ -102,8 +102,9 @@ const GraphicRiverDetail = () => {
 
   function delTagHTMLandLinki(desc: string): string {
     const descNoTag = desc.replace(/<\/?[^>]+(>|$)/g, "");
-    const descNoTagLink = descNoTag.replace(/http[s]?:\/\/[^\s]+[\s]?/g, "");
-    return descNoTagLink;
+    const descNoTagLinks = descNoTag.replace(/http[s]?:\/\/[^\s]+[\s]?/g, "");
+    const descNoEntities = descNoTagLinks.replace(/&[#]?[a-zA-Z0-9]+;/g, "");
+    return descNoEntities;
   }
 
   function getSiteKey(site: string): 'themeforest' | 'videohive' | 'photodune' | 'codecanyon' | 'graphicriver' | 'audiojungle' | null {
