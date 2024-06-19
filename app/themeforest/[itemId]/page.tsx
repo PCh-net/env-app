@@ -156,7 +156,7 @@ useEffect(() => {
               <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900">
                 {item.wordpress_theme_metadata?.description ? delTagHTMLandLinki(item.wordpress_theme_metadata.description) : ''}
               </p>
-              <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900">
+              <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900 line-clamp-3 text-ellipsis min-h-[8rem]">
                 {delTagHTMLandLinki(item.description)}
               </p>
               <p className="text-xs md:text-md lg:text-md mt-2 text-lime-900">Author: {item?.author_username}</p>
