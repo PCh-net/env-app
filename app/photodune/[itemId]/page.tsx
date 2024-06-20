@@ -149,6 +149,9 @@ useEffect(() => {
               <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900">
                 {item.wordpress_theme_metadata?.description ? delTagHTMLandLinki(item.wordpress_theme_metadata.description) : ''}
               </p>
+              <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900 line-clamp-4 text-ellipsis min-h-[4rem]">
+                {delTagHTMLandLinki(item.description)}
+              </p>
               <p className="text-xs md:text-md lg:text-md mt-2 text-lime-900">Author: {item?.author_username}</p>
               <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900">ID: {item?.id}</p>
               <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900">Sales: {item?.number_of_sales}</p>

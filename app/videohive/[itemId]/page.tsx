@@ -150,6 +150,9 @@ useEffect(() => {
               <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900">
                 {item.wordpress_theme_metadata?.description ? delTagHTMLandLinki(item.wordpress_theme_metadata.description) : ''}
               </p>
+              <p className="text-xs md:text-md lg:text-lg mt-2 text-lime-900 line-clamp-4 text-ellipsis min-h-[4rem]">
+                {delTagHTMLandLinki(item.description)}
+              </p>
               <p className="text-xs md:text-md lg:text-md mt-2 text-lime-900">Author: {item?.author_username}</p>
               <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900">ID: {item?.id}</p>
               <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900">Sales: {item?.number_of_sales}</p>
@@ -163,7 +166,7 @@ useEffect(() => {
               ) : (null)}
 
               {item.previews.icon_with_video_preview?.video_url ? (
-                <video width="590" height="332" controls autoPlay loop playsInline preload="none" poster={item.previews.icon_with_video_preview.landscape_url}>
+                <video width="590" height="332" controls muted autoPlay loop playsInline preload="none" poster={item.previews.icon_with_video_preview.landscape_url}>
                 <source src={item.previews.icon_with_video_preview?.video_url} type="video/mp4" />
                 <track
                   src={item.previews.icon_with_video_preview?.video_url}

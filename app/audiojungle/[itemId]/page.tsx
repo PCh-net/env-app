@@ -158,9 +158,10 @@ const handlePlayAudio = useCallback((audioElement: HTMLAudioElement) => {
           <div className='flex flex-col md:flex-row lg:flex-row'>
             <div className='w-4/4 md:w-2/4 p-2'>
               <h2 className="mt-2 text-xl md:text-xl lg:text-2xl md:mt-0 text-lime-900 line-clamp-3 text-ellipsis min-h-[3rem]">{item?.name}</h2>
-              <p className="text-xs md:text-md lg:text-md mt-2 text-lime-900">
+              <p className="text-xs md:text-md lg:text-md mt-2 text-lime-900 line-clamp-4 text-ellipsis min-h-[4rem]">
                 {item.description ? delTagHTMLandLinki(item.description) : ''}
               </p>
+              
               <p className="text-xs md:text-md lg:text-md mt-2 text-lime-900">Author: {item?.author_username}</p>
               <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900">ID: {item?.id}</p>
               <p className="text-xs md:text-md lg:text-md mt-1 text-lime-900">Sales: {item?.number_of_sales}</p>
